@@ -5,7 +5,8 @@ describe('Visit Phoenix Prod website', () => {
       .screenshot()
     })
     it('Login Admin user', function() {
-      cy.get('.validate-inpu > .input100').select('Phoenix Petroleum')
+      cy.get('.validate-inpu > .input100')
+      .select('Phoenix Petroleum')
       cy.get('[data-validate="Enter username"] > .input100')
       .type('pp.sa')
       cy.get('.m-b-50 > .input100')
@@ -14,6 +15,9 @@ describe('Visit Phoenix Prod website', () => {
       .click()
       .screenshot()
     })
-
+    it('Navigate to Manage Users page', function() {
+      cy.get('.navbar__sidebar-toggle-icon').click()
+      cy.get('[href="/dashboard/users"] > .sidebar-menu-item').click()
+    })
 
 })
