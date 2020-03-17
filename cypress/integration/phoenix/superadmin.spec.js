@@ -19,5 +19,4 @@ describe('Visit Phoenix Prod website', () => {
       cy.get('.navbar__sidebar-toggle-icon').click()
       cy.get('[href="/dashboard/users"] > .sidebar-menu-item').click()
     })
-
 })
