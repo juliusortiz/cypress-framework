@@ -1,16 +1,16 @@
 {
-  "name": "Phoenix-Cypress",
+  "name": "cypress",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^4.2.0"
+    "cypress": "^4.5.0"
   },
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run --record --key d3dd5cec-a6d5-437d-80d7-542d66f68fb4",
-    "cypress:open": "cypress open",
-    "runtests": "npm run test"
+    "cy:run:key:phoenix": "node_modules\\.bin\\cypress run --record --key d3dd5cec-a6d5-437d-80d7-542d66f68fb4",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "keywords": [],
   "author": "",

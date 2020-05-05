@@ -1,5 +1,14 @@
 {
   "viewportWidth": 1366,
   "viewportHeight": 934,
-  "projectId": "x4vk1v"
+  "projectId": "x4vk1v",
+  "integrationFolder": "cypress/integration/phoenix",
+
+
+
+
+  "video": false,
+  "watchForFileChanges": false,
+  "pageLoadTimeout": 180000,
+  "defaultCommandTimeout": 180000
 }
