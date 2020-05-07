@@ -1,4 +1,4 @@
-require('./commands')
+require('./commandsGlobal')
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -30,10 +30,33 @@ Cypress.Commands.add("navigate", () => {
       .should('be.visible')
    cy.get('.login-image')
       .should('be.visible')
+   cy.get('.pr-1')
+      .should('be.visible')
+      //.click()
+   cy.get('[href="https://www.phoenixfuels.ph"]')
+      .should('be.visible')
+      //.click()
+   cy.log('Testing Forgot your password elements')
+   cy.get('.regular__link > a')
+      .should('be.visible')
+      .click()
+   cy.get('.reset-form-title')
+      .should('be.visible')
+   cy.get('.input100')
+      .should('be.visible')
+      .type('juandelacruz@mailinator.com').should('have.value', 'juandelacruz@mailinator.com')
+   cy.get('.login100-form-btn')
+      .should('be.visible')
+   cy.get('.regular-label')
+      .should('be.visible')
+   cy.get('u')
+      .should('be.visible')
+   .click()
    cy.log('Navigation Successful!')
 })
 
 Cypress.Commands.add("login", (user) => {
+   cy.log('Logging in user')
    cy.get('.validate-inpu > .input100')
       .should('be.visible')
       .select('Phoenix Petroleum')
@@ -60,25 +83,13 @@ Cypress.Commands.add("login", (user) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 Cypress.Commands.add('notifications', () => {
-
+   cy.get('.navbar__notifications-bell')
+   .should('be.visible').click()
+   //cy.get('.notifications__system-icon').should('be.visible')
+   cy.get('.menu-label-breed').should('contain', 'Notifications').and('be.visible')
+   cy.get('.data-create__btn').should('contain', 'Refresh').and('be.visible')
 })
-
-
-
-
-
-
 
 
 
@@ -119,17 +130,6 @@ Cypress.Commands.add("settings", () => {
 
 
 
-Cypress.Commands.add("logoutCustomer", () => {
-   cy.get('.navbar__dropdown-toggle-icon')
-      .should('be.visible')
-      .click()
-   cy.get('.customer-popup-menu')
-      .should('be.visible')
-   cy.get('.popup-menu__logout > .popup-menu__label')
-      .should('be.visible')
-      .click()
-   cy.log('Logout Successful!')
-})
 
 
 Cypress.Commands.add("logout", () => {
