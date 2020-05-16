@@ -19,14 +19,14 @@ Cypress.Commands.add('ManageUsers', (input) => {
     cy.log('Successfully created admin user!')
 
 
-    cy.log('Test edit admin user')
-    cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').should('be.visible').and('contain', 'Edit').click()
-    cy.get('#username').should('be.visible').type(input.useradminedited).should('have.value', input.useradminedited)
-    cy.get('#email').should('be.visible').type(input.adminemailedited).should('have.value', input.adminemailedited)
-    cy.get('#first_name').should('be.visible').type(input.adminfnameedited).should('have.value', input.adminfnameedited)
-    cy.get('#last_name').should('be.visible').type(input.adminlnameedited).should('have.value', input.adminlnameedited)
-    cy.get('.modal-footer > .action-button-orange').should(be.visible).and('contain', 'Update').click()
-    cy.log('Successfully edited admin user!')
+    // cy.log('Test edit admin user')
+    // cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').should('be.visible').and('contain', 'Edit').click()
+    // cy.get('#username').should('be.visible').type(input.useradminedited).should('have.value', input.useradminedited)
+    // cy.get('#email').should('be.visible').type(input.adminemailedited).should('have.value', input.adminemailedited)
+    // cy.get('#first_name').should('be.visible').type(input.adminfnameedited).should('have.value', input.adminfnameedited)
+    // cy.get('#last_name').should('be.visible').type(input.adminlnameedited).should('have.value', input.adminlnameedited)
+    // cy.get('.modal-footer > .action-button-orange').should('be.visible').and('contain', 'Update').click()
+    // cy.log('Successfully edited admin user!')
 
 
     

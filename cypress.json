@@ -1,14 +1,14 @@
 {
-  "viewportWidth": 1366,
+  "viewportWidth": 1566,
   "viewportHeight": 934,
   "projectId": "x4vk1v",
-  "integrationFolder": "cypress/integration/phoenix",
+  "integrationFolder": "cypress/integration/phoenix/visualRegressionTesting",
 
 
 
 
   "video": false,
   "watchForFileChanges": false,
-  "pageLoadTimeout": 180000,
+  "pageLoadTimeout": 180000, 
   "defaultCommandTimeout": 180000
 }

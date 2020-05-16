@@ -155,7 +155,7 @@ context('Actions', () => {
     cy.get('.action-radios [type="radio"]')
       .check('radio3', { force: true }).should('be.checked')
   })
-
+c
   it('.uncheck() - uncheck a checkbox element', () => {
     // https://on.cypress.io/uncheck
 

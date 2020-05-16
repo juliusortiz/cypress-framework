@@ -1,12 +1,12 @@
-describe('IRT testcases', () => {
+describe('Sales testcases', () => {
   it('Visit Phoenix Website', function () {
     cy.navigate()
   })
-  it('Login Admin user', function () {
-    cy.login({ username: 'jayirt', password: 'P@ssw0rd123' })
+  it('Login sales user', function () {
+    cy.login({ username: 'jaysales', password: 'P@ssw0rd123' })
   })
   it('Navigate to notifications page', function () {
-    cy.notifications()
+    cy.notification()
   })
   it('Navigate to settings page', function () {
     cy.settings()

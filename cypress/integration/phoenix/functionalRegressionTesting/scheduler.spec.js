@@ -1,12 +1,12 @@
-describe('Sales testcases', () => {
+describe('Scheduler testcases', () => {
   it('Visit Phoenix Website', function () {
     cy.navigate()
   })
-  it('Login Admin user', function () {
-    cy.login({ username: 'jaysales', password: 'P@ssw0rd123' })
+  it('Login scheduler user', function () {
+    cy.login({ username: 'jayscheduler', password: 'P@ssw0rd123' })
   })
   it('Navigate to notifications page', function () {
-    cy.notifications()
+    cy.notification()
   })
   it('Navigate to settings page', function () {
     cy.settings()
