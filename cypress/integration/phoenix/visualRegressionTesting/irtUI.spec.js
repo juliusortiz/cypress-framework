@@ -18,5 +18,13 @@ describe('IRT visual regression testing', () => {
         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(2').and('be.have.text', 'Sold To')
         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(1').and('be.have.text', 'Account Name')
     })
+
+    it('Settings page', function () {
+        cy.settings()
+    })
+    
+    it('Logout', function () {
+        cy.logout()
+    })
     
 })

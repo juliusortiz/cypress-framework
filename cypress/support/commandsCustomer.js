@@ -1,3 +1,5 @@
+require('./commandsCustomer')
+
 Cypress.Commands.add("logoutCustomer", () => {
     cy.get('.navbar__dropdown-toggle-icon')
        .should('be.visible')

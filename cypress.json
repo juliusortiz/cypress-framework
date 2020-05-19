@@ -9,6 +9,6 @@
 
   "video": false,
   "watchForFileChanges": false,
-  "pageLoadTimeout": 180000, 
+  "pageLoadTimeout": 3600000, 
   "defaultCommandTimeout": 180000
 }

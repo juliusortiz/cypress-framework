@@ -54,6 +54,10 @@ Cypress.Commands.add("navigate", () => {
    cy.log('Navigation Successful!')
 })
 
+
+
+
+
 Cypress.Commands.add("login", (user) => {
    cy.log('Logging in user')
    cy.get('.validate-inpu > .input100')
@@ -67,6 +71,11 @@ Cypress.Commands.add("login", (user) => {
    cy.log('Login Successful!')
 })
 
+
+
+
+
+
 Cypress.Commands.add("headerElements", (user) => {
    cy.log('Checking header elements...')
    cy.get('.navbar__sidebar-toggle-icon').should('be.visible')
@@ -79,18 +88,6 @@ Cypress.Commands.add("headerElements", (user) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 Cypress.Commands.add('notification', () => {
    cy.log('Checking elements in notification page')
    cy.get('.navbar__notifications-bell').should('be.visible').click()
@@ -98,13 +95,6 @@ Cypress.Commands.add('notification', () => {
    cy.get('.data-create__btn').and('be.have.text', 'Refresh')
    cy.log('All elements in notification page are present')
 })
-
-
-
-
-
-
-
 
 
 
@@ -137,12 +127,6 @@ Cypress.Commands.add("settings", () => {
       .click()
    cy.get('.about-app__container').should('be.visible')
 })
-
-
-
-
-
-
 
 
 Cypress.Commands.add("logout", () => {

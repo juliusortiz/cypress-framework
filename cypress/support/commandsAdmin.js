@@ -1,3 +1,5 @@
+require('./commandsAdmin')
+
 
 Cypress.Commands.add('ManageUsers', (input) => {
     cy.get('.navbar__sidebar-toggle-icon')
