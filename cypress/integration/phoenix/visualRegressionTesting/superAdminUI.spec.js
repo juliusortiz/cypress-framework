@@ -166,5 +166,5 @@ describe('Admin visual regression testing', () => {
         cy.get(':nth-child(1) > :nth-child(2) > div > #edit_reason').should('be.visible').and('contain', 'Edit')
         cy.get(':nth-child(1) > :nth-child(2) > div > #delete_reason').should('be.visible').and('contain', 'Delete')
     })
-
+    
 })

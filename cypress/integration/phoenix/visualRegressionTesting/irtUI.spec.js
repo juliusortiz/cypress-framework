@@ -40,17 +40,31 @@ describe('IRT visual regression testing', () => {
         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Address')
     })
 
-    // it('In-Transit Orders page', function () {
-       
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(4').and('be.have.text', 'Vehicle Code')
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(3').and('be.have.text', 'Ship To')
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(5').and('be.have.text', 'Plate Number')
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(6').and('be.have.text', 'DR No.')
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(7').and('be.have.text', 'Address')
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(2').and('be.have.text', 'Sold To')
-    //     cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(1').and('be.have.text', 'Account Name')
-    // })
+    it('In-Transit Orders page', function () {
+        cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
+        cy.get('[href="/dashboard/in-transit-orders"] > .sidebar-menu-item').and('be.have.text', 'In-Transit Orders').click()
 
+        cy.get('.menu-label-breed').and('be.have.text', 'In-Transit Orders')
+        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Vehicle Code')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Plate Number')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'DR No.')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Address')
+    })
 
+    
+    it('Accepted Orders page', function () {
+        cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
+        cy.get('[href="/dashboard/accepted-orders"] > .sidebar-menu-item').and('be.have.text', 'Accepted Orders').click()
 
+        cy.get('.menu-label-breed').and('be.have.text', 'Accepted Orders')
+        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Vehicle Code')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Plate Number')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'DR No.')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Address')
+    })  
+    
 })
