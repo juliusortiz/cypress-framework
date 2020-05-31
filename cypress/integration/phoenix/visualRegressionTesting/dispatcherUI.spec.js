@@ -39,7 +39,7 @@ describe('Dispatcher visual regression testing', () => {
         cy.get('.navbar__sidebar-toggle-icon').click()
         cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item').and('be.have.text', 'Deliveries History').click()
 
-        cy.get('.menu-label-breed').should('be.visible').and('contain', 'Deliveries History')
+        cy.get('.menu-label-breed').and('be.have.text', 'Deliveries History')
         cy.get('.history-search__container').should('be.visible')
 
     })
@@ -63,7 +63,8 @@ describe('Dispatcher visual regression testing', () => {
     it('Reasons page', function () {
         cy.get('.navbar__sidebar-toggle-icon').click()
         cy.get('[href="/dashboard/manage-reasons-dispatcher"] > .sidebar-menu-item').and('be.have.text', 'Reasons').click()
-        cy.get('.menu-label-breed').should('be.visible').and('be.have.text', 'Reasons')
+        
+        cy.get('.menu-label-breed').and('be.have.text', 'Reasons')
         cy.get('.container__select--active').should('be.visible')
     })
 
