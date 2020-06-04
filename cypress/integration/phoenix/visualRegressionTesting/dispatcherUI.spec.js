@@ -2,7 +2,7 @@ describe('Dispatcher visual regression testing', () => {
 
     before(() => {
         cy.navigate()
-        cy.login({ username: 'jaydispatcher', password: 'P@ssw0rd123'  })
+        cy.login({ username: 'pp.dp_1', password: 'P@ssw0rd123'  })
         cy.headerElements()
     })
 

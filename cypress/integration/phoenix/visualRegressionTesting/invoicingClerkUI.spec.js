@@ -2,7 +2,7 @@ describe('Invoicing clerk visual regression testing', () => {
   
     before(() => {
         cy.navigate()
-        cy.login({ username: 'jayinvoicing', password: 'P@ssw0rd123'  })
+        cy.login({ username: 'pp.inv_1', password: 'P@ssw0rd123'  })
         cy.headerElements()
     })
 

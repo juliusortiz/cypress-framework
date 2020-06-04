@@ -2,7 +2,7 @@ describe('Scheduler visual regression testing', () => {
 
     before(() => {
         cy.navigate()
-        cy.login({ username: 'jayscheduler', password: 'P@ssw0rd123'  })
+        cy.login({ username: 'pp.sch_1', password: 'P@ssw0rd123'  })
         cy.headerElements()
     })
 

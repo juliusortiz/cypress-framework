@@ -2,7 +2,7 @@ describe('Sales visual regression testing', () => {
 
     before(() => {
         cy.navigate()
-        cy.login({ username: 'jaysales', password: 'P@ssw0rd123'  })
+        cy.login({ username: 'pp.sl_1', password: 'P@ssw0rd123'  })
         cy.headerElements()
     })
 
