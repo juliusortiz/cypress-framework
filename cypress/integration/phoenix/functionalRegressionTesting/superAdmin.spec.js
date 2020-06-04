@@ -3,9 +3,9 @@ describe('Super admin testcases', () => {
     cy.navigate()
   })
   it('Login Admin user', function () {
-    cy.login({ username: 'jayadmin', password: 'P@ssw0rd321' })
+    cy.login({ username: 'pp.sa_1', password: 'P@ssw0rd123' })
   })
-  it('Manage User test cases', function () {
+  it('Manage user', function () {
     // cy.ManageUsers({
     //   useradmin: 'jdelacruzautomatedtest',
     //   adminemail: 'jdelacruzautomatedtest@mailinator.com',
@@ -22,7 +22,7 @@ describe('Super admin testcases', () => {
   // it('Navigate to notifications page', function () {
   //   cy.notifications()
   // })
-  it('Navigate to settings page', function () {
+  it('Settings', function () {
     cy.settings()
   })
   it('Logout', function () {

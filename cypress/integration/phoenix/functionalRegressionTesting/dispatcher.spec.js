@@ -3,12 +3,12 @@ describe('Dispatcher testcases', () => {
     cy.navigate()
   })
   it('Login dispatcher user', function () {
-    cy.login({ username: 'pp.dp', password: 'P@ssw0rd123' })
+    cy.login({ username: 'pp.dp_1', password: 'P@ssw0rd123' })
   })
-  it('Navigate to notifications page', function () {
+  it('Notifications', function () {
     cy.notification()
   })
-  it('Navigate to settings page', function () {
+  it('Settings', function () {
     cy.settings()
   })
   it('Logout', function () {

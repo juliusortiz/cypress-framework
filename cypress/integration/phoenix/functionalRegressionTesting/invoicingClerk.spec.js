@@ -3,12 +3,12 @@ describe('Invoicing Clerk testcases', () => {
     cy.navigate()
   })
   it('Login invoicing clerk user', function () {
-    cy.login({ username: 'jayinvoicing', password: 'P@ssw0rd123' })
+    cy.login({ username: 'pp.inv_1', password: 'P@ssw0rd123' })
   })
-  it('Navigate to notifications page', function () {
+  it('Notifications', function () {
     cy.notification()
   })
-  it('Navigate to settings page', function () {
+  it('Settings', function () {
     cy.settings()
   })
   it('Logout', function () {

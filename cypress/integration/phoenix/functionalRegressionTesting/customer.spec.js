@@ -3,12 +3,12 @@ describe('Customer testcases', () => {
     cy.navigate()
   })
   it('Login customer user', function () {
-    cy.login({ username: '0001000940', password: 'P@ssw0rd123', })
+    cy.login({ username: '0001002506', password: 'P@ssw0rd123', })
   })
-  it('Navigate to notifications page', function () {
+  it('Notifications', function () {
     cy.notification()
   })
-  it('Navigate to settings page', function () {
+  it('Settings', function () {
     cy.settings()
   })
   it('Logout', function () {
