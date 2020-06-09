@@ -76,7 +76,7 @@ Cypress.Commands.add("login", (user) => {
 
 
 
-Cypress.Commands.add("headerElements", (user) => {
+Cypress.Commands.add("headerElements", () => {
    cy.log('Checking header elements...')
    cy.get('.navbar__sidebar-toggle-icon').should('be.visible')
    cy.get('.navbar__company-logo-img').should('be.visible')
