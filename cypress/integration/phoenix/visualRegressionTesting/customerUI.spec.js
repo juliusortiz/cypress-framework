@@ -81,13 +81,6 @@ describe('Customer visual regression testing', () => {
         cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Phone Number')
         cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Signature')
 
-        cy.get('.menu-label-breed').and('be.have.text', 'Authorized By')
-        cy.get(':nth-child(9) > .data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'First Name')
-        cy.get(':nth-child(9) > .data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Last Name')
-        cy.get(':nth-child(9) > .data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Phone Number')
-        cy.get(':nth-child(9) > .data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Signature')
-
-
         cy.get('.header-buttons > :nth-child(2)').and('be.have.text', 'MANAGE CDSS').click({ force: true })
         cy.get('.cdss_logo').should('be.visible')
         cy.get('h3').and('be.have.text', 'Phoenix Petroleum Philippines Inc')
