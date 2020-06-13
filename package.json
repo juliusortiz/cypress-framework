@@ -8,13 +8,19 @@
     "cypress": "^4.8.0"
   },
   "scripts": {
-    "cy:run:key:phoenix": "cypress run --record --key d3dd5cec-a6d5-437d-80d7-542d66f68fb4",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
     "cy:info": "cypress info",
-    "cy:cache:clear": "cypress cache clear",
+    "cy:version": "cypress version",
+    
     "cy:cache:list": "cypress cache list",
-    "cy:version": "cypress version"
+    "cy:cache:clear": "cypress cache clear",
+ 
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome --headless",
+    "cy:run:chrome:headless": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:firefox:headless": "cypress run --browser firefox --headless",
+    "cy:run:key:phoenix": "cypress run --record --key d3dd5cec-a6d5-437d-80d7-542d66f68fb4"
   },
   "keywords": [],
   "author": "",
