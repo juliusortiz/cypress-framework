@@ -17,6 +17,7 @@
 import './commandsGlobal'
 import './commandsAdmin'
 import './commandsCustomer'
+import './commandsInvoicing'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
