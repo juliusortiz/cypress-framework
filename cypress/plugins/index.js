@@ -25,9 +25,9 @@ module.exports = (on, config) => {
       launchOptions.args.push('--disable-gpu');
       return launchOptions
     }
-    if (browser.name === 'electron' && browser.isHeadless) {
-      launchOptions.args.push('--disable-gpu');
-      return launchOptions
-    }
+    // if (browser.name === 'electron' && browser.isHeadless) {
+    //   launchOptions.args.push('--disable-gpu');
+    //   return launchOptions
+    // }
   });
 }
