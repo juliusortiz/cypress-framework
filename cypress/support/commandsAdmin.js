@@ -1,37 +1,74 @@
 require('./commandsAdmin')
 
 
-Cypress.Commands.add('ManageUsers', (input) => {
-    cy.get('.navbar__sidebar-toggle-icon')
-        .should('be.visible')
-        .click()
-    cy.get('[href="/dashboard/users"] > .sidebar-menu-item')
-        .should('be.visible')
-        .click()
-    cy.get('.menu-label-breed').should('contain', 'Manage Users').and('be.visible')
-
-
-    cy.log('Test create admin user')
-    cy.get('.create-button').should('contain', 'Create User').and('be.visible').click()
-    cy.get('#username').should('be.visible').type(input.useradmin).should('have.value', input.useradmin)
-    cy.get('#email').should('be.visible').type(input.adminemail).should('have.value', input.adminemail)
-    cy.get('#first_name').should('be.visible').type(input.adminfname).should('have.value', input.adminfname)
-    cy.get('#last_name').should('be.visible').type(input.adminlname).should('have.value', input.adminlname)
-    cy.get('.action-button-green').should('be.visible').and('contain', 'Create').click()
-    cy.log('Successfully created admin user!')
-
-
-    // cy.log('Test edit admin user')
-    // cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').should('be.visible').and('contain', 'Edit').click()
-    // cy.get('#username').should('be.visible').type(input.useradminedited).should('have.value', input.useradminedited)
-    // cy.get('#email').should('be.visible').type(input.adminemailedited).should('have.value', input.adminemailedited)
-    // cy.get('#first_name').should('be.visible').type(input.adminfnameedited).should('have.value', input.adminfnameedited)
-    // cy.get('#last_name').should('be.visible').type(input.adminlnameedited).should('have.value', input.adminlnameedited)
-    // cy.get('.modal-footer > .action-button-orange').should('be.visible').and('contain', 'Update').click()
-    // cy.log('Successfully edited admin user!')
-
-
-    
-
-
+Cypress.Commands.add('CreateUser', (input) => {
+    cy.log('Test create user')
+    cy.get('.create-button').click()
+    cy.get('#username').type(input.user).should('have.value', input.user)
+    cy.get('#email').type(input.email).should('have.value', input.email)
+    cy.get('#first_name').type(input.fname).should('have.value', input.fname)
+    cy.get('#last_name').type(input.lname).should('have.value', input.lname)
 })
+
+Cypress.Commands.add('EditUser', (input) => {
+    cy.log('Test edit the created user')
+    cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').click()
+    cy.get('#email').clear().
+        type(input.email_edited).should('have.value', input.email_edited)
+    cy.get('#first_name').clear()
+        .type(input.fname_edited).should('have.value', input.fname_edited)
+    cy.get('#last_name').clear()
+        .type(input.lname_edited).should('have.value', input.lname_edited)
+})
+
+
+Cypress.Commands.add('DeleteUser', (input) => {
+    cy.log('Test delete the created user')
+    cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').click()
+    cy.get('.action-button-red').click()
+    cy.log('Successfully deleted admin user!')
+})
+
+Cypress.Commands.add('SelectRoleSales', () => {
+    cy.get('.container__dateSelect--active').click()
+    cy.wait(500)
+    cy.get('.container__options-div > :nth-child(1)').click()
+})
+
+Cypress.Commands.add('SelectRoleIRT', () => {
+    cy.get('.container__dateSelect--active').click()
+    cy.wait(500)
+    cy.get('.container__options-div > :nth-child(2)').click()
+})
+
+Cypress.Commands.add('SelectRoleScheduler', () => {
+    cy.get('.container__dateSelect--active').click()
+    cy.wait(500)
+    cy.get('.container__options-div > :nth-child(3)').click()
+})
+
+Cypress.Commands.add('SelectRoleinvoicingClerk', () => {
+    cy.get('.container__dateSelect--active').click()
+    cy.wait(500)
+    cy.get('.container__options-div > :nth-child(4)').click()
+})
+
+Cypress.Commands.add('SelectRoleDispatcher', () => {
+    cy.get('.container__dateSelect--active').click()
+    cy.wait(500)
+    cy.get('.container__options-div > :nth-child(5)').click()
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
