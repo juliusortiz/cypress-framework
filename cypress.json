@@ -2,13 +2,13 @@
   "viewportWidth": 1566,
   "viewportHeight": 934,
   "projectId": "x4vk1v",
-  "integrationFolder": "cypress/integration/phoenix/functionalRegressionTesting",
+  "integrationFolder": "cypress/integration/phoenix/visualRegressionTesting",
 
 
 
 
   "video": false,
   "watchForFileChanges": false,
-  "pageLoadTimeout": 120000, 
+  "pageLoadTimeout": 60000, 
   "defaultCommandTimeout": 180000
 }
