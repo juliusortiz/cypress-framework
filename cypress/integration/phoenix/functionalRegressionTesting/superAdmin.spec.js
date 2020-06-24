@@ -1,5 +1,4 @@
-var i = 0;
-for (i = 1; i <= 2; i++) {
+for (var i = 1; i <= 2; i++) {
   describe('Super admin testcases: Execution count:' + i, () => {
 
     before(() => {

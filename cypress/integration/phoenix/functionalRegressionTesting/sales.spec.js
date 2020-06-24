@@ -1,5 +1,4 @@
-var i = 0;
-for (i = 1; i <= 2; i++) {
+for (var i = 1; i <= 2; i++) {
   describe('Sales testcases: Execution count: ' + i, () => {
     it('Visit Phoenix Website', function () {
       cy.navigate()

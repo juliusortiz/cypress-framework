@@ -5,16 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^4.8.0"
+    "cypress": "^4.9.0"
   },
   "scripts": {
     "cy:open": "cypress open",
     "cy:info": "cypress info",
     "cy:version": "cypress version",
-    
     "cy:cache:list": "cypress cache list",
     "cy:cache:clear": "cypress cache clear",
- 
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:chrome:headless": "cypress run --browser chrome --headless",
