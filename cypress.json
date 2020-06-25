@@ -2,7 +2,7 @@
   "viewportWidth": 1566,
   "viewportHeight": 934,
   "projectId": "x4vk1v",
-  "integrationFolder": "cypress/integration/phoenix/visualRegressionTesting",
+  "integrationFolder": "cypress/integration/phoenix/functionalRegressionTesting",
 
 
 

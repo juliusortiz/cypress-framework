@@ -1,5 +1,5 @@
 for (var i = 1; i <= 2; i++) {
-    describe('Scheduler visual regression testing', () => {
+    describe('Scheduler visual regression testing: Execution count: ' + i, () => {
 
         before(() => {
             cy.navigate()
