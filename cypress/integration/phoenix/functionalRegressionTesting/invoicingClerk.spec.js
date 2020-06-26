@@ -5,6 +5,7 @@ for (var i = 1; i <= 2; i++) {
     })
     it('Login invoicing clerk user', function () {
       cy.login({ username: 'pp.inv_1', password: 'P@ssw0rd123' })
+      cy.mockGeolocation();
     })
     it('Notifications', function () {
       cy.notification()

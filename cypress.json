@@ -6,7 +6,8 @@
 
 
 
-
+  "theme": "dark",
+  "darkMediaQuery": true,
   "video": false,
   "watchForFileChanges": false,
   "pageLoadTimeout": 60000, 
