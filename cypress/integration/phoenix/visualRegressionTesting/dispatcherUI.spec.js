@@ -40,9 +40,9 @@ describe('Dispatcher visual regression testing:', () => {
 
     it('Delivery history page', function () {
         cy.get('.navbar__sidebar-toggle-icon').click()
-        cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item').and('be.have.text', 'Deliveries History').click()
+        cy.get('[href="/dashboard/delivery-history"] > .sidebar-menu-item').and('be.have.text', 'Delivery History').click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'Deliveries History')
+        cy.get('.menu-label-breed').and('be.have.text', 'Delivery History')
         cy.get('.history-search__container').should('be.visible')
 
     })
