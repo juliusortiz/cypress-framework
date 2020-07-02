@@ -22,7 +22,7 @@ describe('Admin visual regression testing:', () => {
     it('Dashboard page', function () {
         cy.get('.menu-label-breed').and('be.have.text', 'Dashboard')
 
-        cy.get('.mainblock-chart__title').and('be.have.text', 'Delivery Status')
+        cy.get('.mainblock-chart__title').and('be.have.text', 'Statuses Details')
         cy.get('.mainblock__chart > .data-list-table > .data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Hauler Name')
         cy.get('.mainblock__chart > .data-list-table > .data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Vehicle Code')
         cy.get('.mainblock__chart > .data-list-table > .data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Plate Number')
@@ -56,16 +56,6 @@ describe('Admin visual regression testing:', () => {
         //cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').and('be.have.text', 'Delete')
     })
 
-    it('Statuses page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-        cy.get('[href="/dashboard/statuses"] > .sidebar-menu-item').and('be.have.text', 'Statuses').click()
-
-        cy.get('.menu-label-breed').and('be.have.text', 'Statuses')
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Status')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Code')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Order')
-    })
-
     it('My Accounts page', function () {
         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
         cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'My Accounts').click()
@@ -84,16 +74,16 @@ describe('Admin visual regression testing:', () => {
         cy.get('[href="/dashboard/manage-delivery-receipts"] > .sidebar-menu-item').and('be.have.text', 'Delivery Status').click()
 
         cy.get('.menu-label-breed').and('be.have.text', 'Delivery Status')
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Hauler')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Vehicle Code')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Plate Number')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Driver Name')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Order Date')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Issuing Plant')
-        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Delivery Instructions')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Products')
-        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Current Status')
-        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Distance')
+        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold to Code')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold to Name')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship to Code')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Ship to Name')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'SO Number')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'SO Date')
+        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Order Details')
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Issuing Plant')
+        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Delivery Instructions')
+        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Status')
         cy.get('.data-list-table__head > tr > :nth-child(11)').and('be.have.text', 'Location')
         cy.get('.data-list-table__head > tr > :nth-child(12)').and('be.have.text', 'Delivery Receipt')
     })

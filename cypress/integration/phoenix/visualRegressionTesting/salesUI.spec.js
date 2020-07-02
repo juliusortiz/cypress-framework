@@ -27,13 +27,16 @@ describe('Sales visual regression testing:', () => {
         cy.get('.container__dateSelect--active').should('be.visible')
 
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'SO #')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship To')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Status')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Delivery Date')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Delivery Time')
-        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Product')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Action')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Code')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Sold To Name')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Ship To Code')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Ship To Name')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Ship To Address')
+        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Delivery Date')
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Delivery Time')
+        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Status')
+        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Product')
+        cy.get('.data-list-table__head > tr > :nth-child(11)').and('be.have.text', 'Action')
     })
 
     it('Delivery Status page', function () {
