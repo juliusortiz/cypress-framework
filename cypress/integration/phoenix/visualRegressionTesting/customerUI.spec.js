@@ -23,7 +23,7 @@ describe('Customer visual regression testing:', () => {
     it('Dashboard page', function () {
         cy.get('.customer-search').should('be.visible')
         cy.get('.delivery-indicator').should('be.visible')
-        cy.get('.delivery-indicator__action').and('be.have.text', 'Refresh ')
+        cy.get('.delivery-indicator__action').and('be.have.text', 'View Details ')
 
         cy.get('.home__cus-header').should('be.visible')
     })

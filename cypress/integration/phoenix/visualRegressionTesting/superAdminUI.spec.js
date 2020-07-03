@@ -61,12 +61,14 @@ describe('Admin visual regression testing:', () => {
         cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'My Accounts').click()
 
         cy.get('.menu-label-breed').and('be.have.text', 'My Accounts')
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'E-mail')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'First Name')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Last Name')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Sold To')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Sold To Address')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', "Ship To's")
+        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Code')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Name')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Sold To Address')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'First Name')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Last Name')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Username')
+        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'E-mail')
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', "Ship To's")
     })
 
     it('Delivery Status page', function () {
