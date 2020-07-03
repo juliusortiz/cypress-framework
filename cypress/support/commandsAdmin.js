@@ -65,6 +65,41 @@ Cypress.Commands.add('SelectRoleDispatcher', () => {
 
 
 
+Cypress.Commands.add('CreateReason', (input) => {
+    cy.log('Test create reason')
+    cy.get(':nth-child(3) > :nth-child(1) > .btn').click()
+    cy.get('#name').type(input.reason).should('have.value', input.reason)
+    cy.get('.modal-footer__action').and('be.have.text', 'Add').click()
+})
+
+Cypress.Commands.add('EditReason', (input) => {
+    cy.log('Test edit reason')
+    cy.get('#name').clear()
+        .type(input.reason_edited).should('have.value', input.reason_edited)
+    cy.get('.modal-footer__action').and('be.have.text', 'EDIT').click()
+})
+
+Cypress.Commands.add('DeleteReason', () => {
+    cy.log('Test delete reason')
+    cy.get('.action-button-red').and('be.have.text', 'Yes').click()
+})
+
+
+Cypress.Commands.add('SelectReasonPartiallyAccepted', () => {
+    cy.get('.container__select--active').click()
+    cy.get('[value="Partially Accepted"]').click()
+})
+
+Cypress.Commands.add('SelectReasonProblemsReported', () => {
+    cy.get('.container__select--active').click()
+    cy.get('[value="Problems Reported"]').click()
+})
+
+
+
+
+
+
 
 
 
