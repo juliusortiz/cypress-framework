@@ -22,7 +22,7 @@ Cypress.Commands.add('EditUser', (input) => {
 })
 
 
-Cypress.Commands.add('DeleteUser', (input) => {
+Cypress.Commands.add('DeleteUser', () => {
     cy.log('Test delete the created user')
     cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').click()
     cy.get('.action-button-red').click()
