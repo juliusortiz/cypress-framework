@@ -2,7 +2,7 @@ describe('Customer visual regression testing:', () => {
 
     before(() => {
         cy.navigate()
-        cy.login({ username: '0001002506', password: 'P@ssw0rd123' })
+        cy.login({ username: '0001002009', password: 'OLLP@ssw0rd11' })
         cy.headerElementsCustomer()
     })
 
@@ -21,12 +21,19 @@ describe('Customer visual regression testing:', () => {
     })
 
     it('Dashboard page', function () {
+        cy.wait(1000)
         cy.get('.customer-search').should('be.visible')
         cy.get('.delivery-indicator').should('be.visible')
-        cy.get('.delivery-indicator__action').and('be.have.text', 'View Details ')
-
+        cy.get('.delivery-indicator__action').then(($statusButton) => {
+            if ($statusButton.text().includes('View Details')) {
+                cy.get('.delivery-indicator__action').and('be.have.text', 'View Details ')
+            } else {
+                cy.get('.delivery-indicator__action').and('be.have.text', 'Refresh ')
+            }
+        })
         cy.get('.home__cus-header').should('be.visible')
     })
+
 
     it('Delivery Status page', function () {
         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
