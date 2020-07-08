@@ -1,4 +1,4 @@
-describe('Admin visual regression testing:', () => {
+describe('Admin navigation regression testing:', () => {
 
     before(() => {
         cy.navigate()
@@ -56,11 +56,11 @@ describe('Admin visual regression testing:', () => {
         //cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').and('be.have.text', 'Delete')
     })
 
-    it('My Accounts page', function () {
+    it('Customers List', function () {
         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-        cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'My Accounts').click()
+        cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'Customer List').click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'My Accounts')
+        cy.get('.menu-label-breed').and('be.have.text', 'Customer List')
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Code')
         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Name')
         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Sold To Address')

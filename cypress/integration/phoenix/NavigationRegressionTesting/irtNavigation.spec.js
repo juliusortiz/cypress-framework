@@ -1,4 +1,4 @@
-describe('IRT visual regression testing:', () => {
+describe('IRT navigation regression testing:', () => {
 
     before(() => {
         cy.navigate()

@@ -1,4 +1,4 @@
-describe('Invoicing clerk visual regression testing:', () => {
+describe('Invoicing clerk navigation regression testing:', () => {
 
     before(() => {
         cy.navigate()

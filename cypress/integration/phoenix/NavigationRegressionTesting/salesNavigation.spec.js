@@ -1,4 +1,4 @@
-describe('Sales visual regression testing:', () => {
+describe('Sales navigation regression testing:', () => {
 
     before(() => {
         cy.navigate()
@@ -33,10 +33,9 @@ describe('Sales visual regression testing:', () => {
         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Ship To Name')
         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Ship To Address')
         cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Delivery Date')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Delivery Time')
-        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Status')
-        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Product')
-        cy.get('.data-list-table__head > tr > :nth-child(11)').and('be.have.text', 'Action')
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Status')
+        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Product')
+        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Action')
     })
 
     it('Delivery Status page', function () {
@@ -59,11 +58,11 @@ describe('Sales visual regression testing:', () => {
         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Action')
     })
 
-    it('My Accounts page', function () {
+    it('Customers list page', function () {
         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-        cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'My Accounts').click()
+        cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'Customer List').click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'My Accounts')
+        cy.get('.menu-label-breed').and('be.have.text', 'Customer List')
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Code')
         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Name')
         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Sold To Address')
