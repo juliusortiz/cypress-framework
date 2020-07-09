@@ -26,14 +26,14 @@ describe('Dispatcher navigation regression testing:', () => {
         cy.get('.sales-input-container').should('be.visible')
 
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Trip Ticket No.')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'SO No.')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Order Approval Date')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'OB No.')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Hauler Name')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Plate No.')
-        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Driver')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Status')
-        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Delivery Instructions')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Delivery Instructions')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'SO No.')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Order Approval Date')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'OB No.')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Hauler Name')
+        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Plate No.')
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Driver')
+        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Status')
     })
 
     it('Delivery history page', function () {
