@@ -36,8 +36,8 @@ describe('Invoicing clerk navigation regression testing:', () => {
     it('Scheduling page', function () {
         cy.get('.navbar__sidebar-toggle-icon').click()
         cy.get('[href="/dashboard/scheduling-system"] > .sidebar-menu-item').and('be.have.text', 'Scheduling').click()
-        //cy.get('.menu-label-breed').and('be.have.text', 'Scheduling')
-        cy.get('.menu-label-breed').and('be.have.text', 'Dashboard')
+        //cy.get('.menu-label-breed').and('be.have.text', 'Sche duling')
+        cy.get('.menu-label-breed').and('be.have.text', 'Scheduling')
         cy.get(':nth-child(1) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
         cy.get('.section-inputs > :nth-child(2) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
         cy.get(':nth-child(3) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
