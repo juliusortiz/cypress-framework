@@ -68,7 +68,7 @@ describe('Admin navigation regression testing:', () => {
         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Last Name')
         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Username')
         cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'E-mail')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', "Ship To's")
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', "Ship To")
     })
 
     it('Delivery Status page', function () {

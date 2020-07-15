@@ -70,7 +70,7 @@ describe('Sales navigation regression testing:', () => {
         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Last Name')
         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Username')
         cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'E-mail')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', "Ship To's")
+        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', "Ship To")
 
         // cy.get(':nth-child(1) > :nth-child(6) > .table-button-rectangle').and('be.have.text', 'View').click()
         // cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', '#')
