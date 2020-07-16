@@ -94,11 +94,24 @@ describe('Admin navigation regression testing:', () => {
         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
         cy.get('[href="/dashboard/manage-reasons"] > .sidebar-menu-item').and('be.have.text', 'Manage Reasons').click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'Manage Reasons').click()
+        cy.get('.menu-label-breed').and('be.have.text', 'Manage Reasons')
         cy.get(':nth-child(3) > :nth-child(1) > .btn').should('be.visible').and('contain', 'Add New Reason')
         cy.get('[style="color: rgb(102, 196, 67);"]').should('be.visible')
         cy.get(':nth-child(1) > :nth-child(2) > div > #edit_reason').should('be.visible').and('contain', 'Edit')
         cy.get(':nth-child(1) > :nth-child(2) > div > #delete_reason').should('be.visible').and('contain', 'Delete')
+    })
+
+    it('Image Submitted page', function () {
+        cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
+        cy.get('[href="/dashboard/image-submitted"] > .sidebar-menu-item').and('be.have.text', 'Image Submitted').click()
+
+        cy.get('.menu-label-breed').and('be.have.text', 'Image Submitted')
+        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Name')
+        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To Name')
+        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'DR Number')
+        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Last Update')
+        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Image Type')
+        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Image File')
     })
 })
 
