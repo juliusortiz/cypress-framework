@@ -1,69 +1,71 @@
-describe('IRT navigation regression testing:', () => {
+//This feature will be revamped
 
-    before(() => {
-        cy.navigate()
-        cy.login({ username: 'pp.irt_1', password: 'P@ssw0rd123' })
-        cy.headerElements()
-    })
+// describe('IRT navigation regression testing:', () => {
 
-    after(() => {
-        cy.notification()
-        cy.settings()
-        cy.logout()
-    })
+//     before(() => {
+//         cy.navigate()
+//         cy.login({ username: 'pp.irt_1', password: 'P@ssw0rd123' })
+//         cy.headerElements()
+//     })
 
-    beforeEach(() => {
-        cy.log('Start testing of page elements . . .')
-    })
+//     after(() => {
+//         cy.notification()
+//         cy.settings()
+//         cy.logout()
+//     })
 
-    afterEach(() => {
-        cy.log('End of testing of page elements . . . ')
-    })
+//     beforeEach(() => {
+//         cy.log('Start testing of page elements . . .')
+//     })
 
-    it('Dashboard page', function () {
-        cy.get(':nth-child(1) > .menu-label-breed').and('be.have.text', 'In-Transit Orders')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(1').and('be.have.text', 'Sold To Code')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(2').and('be.have.text', 'Sold To Name')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(3').and('be.have.text', 'Ship To Name')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(4').and('be.have.text', 'Vehicle Code')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(5').and('be.have.text', 'Plate Number')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(6').and('be.have.text', 'DR Number')
-        cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(7').and('be.have.text', 'Address')
+//     afterEach(() => {
+//         cy.log('End of testing of page elements . . . ')
+//     })
 
-        cy.get(':nth-child(3) > .menu-label-breed').and('be.have.text', 'Accepted Orders')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Code')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Name')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship To Name')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Vehicle Code')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Plate Number')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'DR Number')
-        cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Address')
-    })
+//     it('Dashboard page', function () {
+//         cy.get(':nth-child(1) > .menu-label-breed').and('be.have.text', 'In-Transit Orders')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(1').and('be.have.text', 'Sold To Code')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(2').and('be.have.text', 'Sold To Name')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(3').and('be.have.text', 'Ship To Name')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(4').and('be.have.text', 'Vehicle Code')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(5').and('be.have.text', 'Plate Number')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(6').and('be.have.text', 'DR Number')
+//         cy.get('.pb-5 > .data-list-table > .data-list-table__head > tr > :nth-child(7').and('be.have.text', 'Address')
 
-    it('In-Transit Orders page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-        cy.get('[href="/dashboard/in-transit-orders"] > .sidebar-menu-item').and('be.have.text', 'In-Transit Orders').click()
+//         cy.get(':nth-child(3) > .menu-label-breed').and('be.have.text', 'Accepted Orders')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Code')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Name')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship To Name')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Vehicle Code')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Plate Number')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'DR Number')
+//         cy.get(':nth-child(4) > .data-list-table > .data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Address')
+//     })
 
-        cy.get('.menu-label-breed').and('be.have.text', 'In-Transit Orders')
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Name')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To Name')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Vehicle Code')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Plate Number')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'DR Number')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Address')
-    })
+//     it('In-Transit Orders page', function () {
+//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
+//         cy.get('[href="/dashboard/in-transit-orders"] > .sidebar-menu-item').and('be.have.text', 'In-Transit Orders').click()
+
+//         cy.get('.menu-label-breed').and('be.have.text', 'In-Transit Orders')
+//         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Name')
+//         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To Name')
+//         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Vehicle Code')
+//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Plate Number')
+//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'DR Number')
+//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Address')
+//     })
 
 
-    it('Accepted Orders page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-        cy.get('[href="/dashboard/accepted-orders"] > .sidebar-menu-item').and('be.have.text', 'Accepted Orders').click()
+//     it('Accepted Orders page', function () {
+//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
+//         cy.get('[href="/dashboard/accepted-orders"] > .sidebar-menu-item').and('be.have.text', 'Accepted Orders').click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'Accepted Orders')
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Name')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To Name')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Vehicle Code')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Plate Number')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'DR Number')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Address')
-    })
-})
+//         cy.get('.menu-label-breed').and('be.have.text', 'Accepted Orders')
+//         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Name')
+//         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To Name')
+//         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Vehicle Code')
+//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Plate Number')
+//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'DR Number')
+//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Address')
+//     })
+// })
