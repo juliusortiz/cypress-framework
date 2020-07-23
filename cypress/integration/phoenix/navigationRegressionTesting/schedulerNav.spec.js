@@ -45,8 +45,7 @@ describe('Scheduler navigation regression testing:', () => {
         cy.get('[href="/dashboard/dispatcherDashboard"] > .sidebar-menu-item').and('be.have.text', 'Current Deliveries').click()
 
         cy.get('.menu-label-breed').and('be.have.text', 'Current Deliveries')
-        cy.get('[style="color: rgb(102, 196, 67);"]').should('be.visible')
-        cy.get('.sales-input-container').should('be.visible')
+        cy.get('.float-right').should('be.visible')
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Trip Ticket No.')
         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Delivery Instructions')
         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'SO No.')
@@ -64,7 +63,7 @@ describe('Scheduler navigation regression testing:', () => {
         cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item').and('be.have.text', 'Delivery History').click()
 
         cy.get('.menu-label-breed').and('be.have.text', 'Delivery History')
-        cy.get('.history-search__container').should('be.visible')
+        cy.get('.col-3').should('be.visible')
 
     })
 

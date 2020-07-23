@@ -23,7 +23,7 @@ describe('Dispatcher navigation regression testing:', () => {
     it('Dashboard page', function () {
         cy.get('.menu-label-breed').should('be.visible').and('contain', 'Dashboard')
         cy.get('.container__select--active').should('be.visible')
-        cy.get('.sales-input-container').should('be.visible')
+        cy.get('.float-right').should('be.visible')
 
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Trip Ticket No.')
         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Delivery Instructions')
@@ -41,7 +41,7 @@ describe('Dispatcher navigation regression testing:', () => {
         cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item').and('be.have.text', 'Delivery History').click()
 
         cy.get('.menu-label-breed').and('be.have.text', 'Delivery History')
-        cy.get('.history-search__container').should('be.visible')
+        cy.get('.col-3').should('be.visible')
 
     })
 

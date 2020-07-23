@@ -23,7 +23,7 @@ describe('Sales navigation regression testing:', () => {
     it('Dashboard page', function () {
         cy.get('.menu-label-breed').and('be.have.text', 'Dashboard')
         cy.get('.container__select--active').should('be.visible')
-        cy.get('.sales-input-container').should('be.visible')
+        cy.get('.float-right').should('be.visible')
         cy.get('.container__dateSelect--active').should('be.visible')
 
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'SO #')
@@ -48,7 +48,7 @@ describe('Sales navigation regression testing:', () => {
         cy.get('[href="/dashboard/history"] > .sidebar-menu-item').and('be.have.text', 'History').click()
 
         cy.get('.container__select--active').should('be.visible')
-        cy.get('.sales-input-container').should('be.visible')
+        cy.get('.float-right').should('be.visible')
 
         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Order #')
         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold to Name')
