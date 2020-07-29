@@ -1,7 +1,7 @@
 describe('Scheduler navigation regression testing:', () => {
 
     before(() => {
-        cy.navigate()
+        cy.navigatePDS()
         cy.login({ username: 'pp.sch_1', password: 'P@ssw0rd123' })
         cy.headerElements()
     })

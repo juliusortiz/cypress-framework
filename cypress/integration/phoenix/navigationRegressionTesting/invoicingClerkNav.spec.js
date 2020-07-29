@@ -1,7 +1,7 @@
 describe('Invoicing clerk navigation regression testing:', () => {
 
     before(() => {
-        cy.navigate()
+        cy.navigatePDS()
         cy.login({ username: 'pp.inv_1', password: 'P@ssw0rd123' })
         cy.mockGeolocation();
         cy.headerElements()

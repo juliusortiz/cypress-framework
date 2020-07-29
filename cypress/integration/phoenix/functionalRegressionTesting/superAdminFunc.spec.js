@@ -1,22 +1,21 @@
+import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
+import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
+
+
 describe('Super admin functional regression testing:', () => {
 
-  before(() => {
-    cy.navigate()
-    cy.login({ username: 'pp.sa_1', password: 'P@ssw0rd123' })
-    cy.headerElements()
+  const globalObjects = new GlobalObjects()
+  const settingsObjects = new SettingsObjects()
+
+  it('Visit Phoenix Website', function () {
+    cy.navigatePDSQAS()
   })
 
-  after(() => {
-    cy.settings()
-    cy.logout()
-  })
-
-  beforeEach(() => {
-    cy.log('Start testing of page elements . . .')
-  })
-
-  afterEach(() => {
-    cy.log('End of testing of page elements . . . ')
+  it('Login super admin user', function () {
+    globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
+    globalObjects.username().type('pp.sa_1').should('have.value', 'pp.sa_1')
+    globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
+    globalObjects.login().click()
   })
 
   it('Manage user', function () {
@@ -192,5 +191,34 @@ describe('Super admin functional regression testing:', () => {
     cy.get(':nth-child(3) > :nth-child(2) > div > #delete_reason').click()
     cy.DeleteReason()
     cy.log('Done CRUD Problems Reported reason')
+
+    it('Settings', function () {
+      globalObjects.profileDropdown().click()
+      globalObjects.settingsButton().click()
+
+      settingsObjects.usernameField().type('jdelacruz')
+        .should('have.value', 'jdelacruz')
+      settingsObjects.emailField().type('juandelacruz2020@mailinator.com')
+        .should('have.value', 'juandelacruz2020@mailinator.com')
+      settingsObjects.passwordField().type('P@ssw0rd123')
+        .should('have.value', 'P@ssw0rd123')
+      settingsObjects.contactNumber().type('09356285322')
+        .should('have.value', '09356285322')
+      settingsObjects.saveButton()
+
+      settingsObjects.sendFeedbackTab().click()
+      settingsObjects.textArea().type('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
+        .should('have.value', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
+      settingsObjects.submitButton()
+
+      settingsObjects.AboutthisAppTab().click()
+      settingsObjects.AboutthisAppContainer()
+    })
+
+    it('Logout', function () {
+      globalObjects.profileDropdown().click()
+      globalObjects.userPopUp()
+      globalObjects.logoutButton().click()
+    })
   })
 })

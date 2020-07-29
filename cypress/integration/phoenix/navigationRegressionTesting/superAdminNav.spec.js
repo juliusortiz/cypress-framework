@@ -1,7 +1,7 @@
 describe('Admin navigation regression testing:', () => {
 
     before(() => {
-        cy.navigate()
+        cy.navigatePDS()
         cy.login({ username: 'pp.sa_1', password: 'P@ssw0rd123' })
         cy.headerElements()
     })

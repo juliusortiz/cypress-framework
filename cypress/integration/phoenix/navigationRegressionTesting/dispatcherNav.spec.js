@@ -1,7 +1,7 @@
 describe('Dispatcher navigation regression testing:', () => {
 
     before(() => {
-        cy.navigate()
+        cy.navigatePDS()
         cy.login({ username: 'pp.dp_1', password: 'P@ssw0rd123' })
         cy.headerElements()
     })
