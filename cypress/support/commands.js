@@ -33,7 +33,7 @@ Cypress.Commands.add('mockGeolocation', (latitude = 30, longitude = -98) => {
    })
 })
 
-Cypress.Commands.add("navigatePDSQAS", () => {
+Cypress.Commands.add("navigatePDS", () => {
    cy.log('Check elements in Login page')
    cy.visit('https://qasphoenixdeliverysystem.phoenixfuels.ph/')
    cy.get('.login100-form-title > .login100-form')
@@ -63,35 +63,7 @@ Cypress.Commands.add("navigatePDSQAS", () => {
    cy.log('Navigation Successful!')
 })
 
-Cypress.Commands.add("navigatePDSPROD", () => {
-   cy.log('Check elements in Login page')
-   cy.visit('https://qasphoenixdeliverysystem.phoenixfuels.ph/')
-   cy.get('.login100-form-title > .login100-form')
-      .should('be.visible')
-   cy.get('.login-image')
-      .should('be.visible')
-   cy.get('.validate-inpu > .input100')
-      .should('be.visible')
-   cy.get('.validate-input.m-b-35 > .input100')
-      .should('be.visible')
-   cy.get('.m-b-50 > .input100')
-      .should('be.visible')
-   cy.get('#pass_read').should('be.visible')
-   cy.get('.login100-form-btn').and('be.have.text', 'Log In')
-   cy.get('.pr-1').should('be.visible').and('be.have.text', 'Contact |')
-   cy.get('[href="https://www.phoenixfuels.ph"]').and('be.have.text', 'Phoenix Petroleum Philippines, Inc. | Copyright 2019')
 
-   cy.log('Check elements in Forgot your password? page')
-   cy.get('.regular__link > a').and('be.have.text', 'Forgot your password?').click()
-   cy.get('.reset-form-title').should('be.visible').and('be.have.text', 'Please input email address to reset')
-   cy.get('.input100')
-      .should('be.visible')
-      .type('juandelacruz@mailinator.com').should('have.value', 'juandelacruz@mailinator.com')
-   cy.get('.login100-form-btn').and('be.have.text', 'SUBMIT')
-   cy.get('.regular-label').and('be.have.text', 'Already a member? Login')
-   cy.get('u').should('be.visible').and('be.have.text', 'Login').click()
-   cy.log('Navigation Successful!')
-})
 
 
 

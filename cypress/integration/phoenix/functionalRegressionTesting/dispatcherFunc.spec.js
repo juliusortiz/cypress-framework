@@ -8,11 +8,8 @@ describe('Dispatcher functional regression testing:', () => {
   const notifObjects = new NotifObjects()
   const settingsObjects = new SettingsObjects()
 
-  it('Visit Phoenix Website', function () {
-    cy.navigatePDSQAS()
-  })
-
   it('Login dispatcher user', function () {
+    cy.navigatePDS()
     globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
     globalObjects.username().type('pp.dp_1').should('have.value', 'pp.dp_1')
     globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')

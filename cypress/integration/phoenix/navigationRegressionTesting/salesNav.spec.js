@@ -1,23 +1,22 @@
+import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
+import CustomerPage from '../../../pageObjects/phoenix/customerPage'
+import NotifObjects from '../../../pageObjects/phoenix/notificationPage'
+import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
+
+
 describe('Sales navigation regression testing:', () => {
 
-    before(() => {
-        cy.navigatePDS()
-        cy.login({ username: 'pp.sl_1', password: 'P@ssw0rd123' })
-        cy.headerElements()
-    })
-
-    after(() => {
-        cy.notification()
-        cy.settings()
-        cy.logout()
-    })
+    const globalObjects = new GlobalObjects()
+    const customerObjects = new CustomerPage()
+    const notifObjects = new NotifObjects()
+    const settingsObjects = new SettingsObjects()
 
     beforeEach(() => {
-        cy.log('Start testing of page elements . . .')
+        cy.log('Start test case execution . . .')
     })
 
     afterEach(() => {
-        cy.log('End of testing of page elements . . . ')
+        cy.log('End of test case execution . . . ')
     })
 
     it('Dashboard page', function () {

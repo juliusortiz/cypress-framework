@@ -25,14 +25,12 @@ describe('Customer navigation regression testing:', () => {
         globalObjects.username().type('0001002022').should('have.value', '0001002022')
         globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
         globalObjects.login().click()
-
     })
 
     it('Dashboard page', function () {
         cy.wait(1000)
         customerObjects.searchField()
         customerObjects.currDelContainer()
-
 
         customerObjects.currDelButton().then(($statusButton) => {
             if ($statusButton.text().includes('View Details')) {

@@ -8,11 +8,8 @@ describe('Sales functional regression testing:', () => {
   const notifObjects = new NotifObjects()
   const settingsObjects = new SettingsObjects()
 
-  it('Visit Phoenix Website', function () {
-    cy.navigatePDSQAS()
-  })
-
   it('Login sales user', function () {
+    cy.navigatePDS()
     globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
     globalObjects.username().type('pp.sl_1 ').should('have.value', 'pp.sl_1')
     globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
