@@ -19,7 +19,7 @@ describe('Dispatcher navigation regression testing:', () => {
         cy.log('End of test case execution . . . ')
     })
 
-    it('Login customer', function () {
+    it('Login dispatcher', function () {
         cy.navigatePDS()
         globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
         globalObjects.username().type('pp.dp_1').should('have.value', 'pp.dp_1')

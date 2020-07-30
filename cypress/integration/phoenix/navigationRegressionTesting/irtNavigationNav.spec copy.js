@@ -16,7 +16,7 @@ describe('IRT functional regression testing:', () => {
     cy.log('End of test case execution . . . ')
   })
 
-  it('Login IRT user', function () {
+  it('Login IRT', function () {
     cy.navigatePDS()
     globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
     globalObjects.username().type('pp.irt_1').should('have.value', 'pp.irt_1')
