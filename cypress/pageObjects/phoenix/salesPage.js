@@ -47,7 +47,7 @@ class salesObects {
 
     shipToAddCol() {
         return cy.get('.data-list-table__head > tr > :nth-child(6)')
-            .should('be.visible')
+           
     }
 
     delDateCol() {
@@ -128,7 +128,7 @@ class salesObects {
 
     actionCol() {
         return cy.get('.data-list-table__head > tr > :nth-child(6)')
-            .should('be.visible')
+           
     }
 
     ////////////////////////////////////////////////Customer list page
@@ -169,7 +169,7 @@ class salesObects {
 
     usernameCol() {
         return cy.get('.data-list-table__head > tr > :nth-child(6)')
-            .should('be.visible')
+
     }
 
     emailCol() {

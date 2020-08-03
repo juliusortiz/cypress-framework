@@ -1,5 +1,4 @@
 import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
-import CustomerPage from '../../../pageObjects/phoenix/customerPage'
 import SalesObjects from '../../../pageObjects/phoenix/salesPage'
 import NotifObjects from '../../../pageObjects/phoenix/notificationPage'
 import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
@@ -8,7 +7,6 @@ import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
 describe('Sales navigation regression testing:', () => {
 
     const globalObjects = new GlobalObjects()
-    const customerObjects = new CustomerPage()
     const salesObjects = new SalesObjects()
     const notifObjects = new NotifObjects()
     const settingsObjects = new SettingsObjects()
@@ -62,16 +60,16 @@ describe('Sales navigation regression testing:', () => {
         salesObjects.historySearchField()
 
         salesObjects.orderNumCol()
-        salesObjects.soldToNameCol()
+        salesObjects.soldToNameCol0()
         salesObjects.shipToNameCol0()
         salesObjects.statusCol0()
-        salesObjects.delDateCol()
+        salesObjects.delDateCol0()
         salesObjects.actionCol()
     })
 
     it('Customers list page', function () {
         globalObjects.menuButton().click()
-        salesObjects.custListPage()
+        salesObjects.custListPage().click()
 
         salesObjects.custListHeader()
         salesObjects.soldToCodeCol0()
@@ -84,7 +82,7 @@ describe('Sales navigation regression testing:', () => {
         salesObjects.shipToCol()
         // cy.get(':nth-child(1) > :nth-child(6) > .table-button-rectangle').and('be.have.text', 'View').click()
         // cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', '#')
-        // cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To')
+        // cy.get('.data-l  ist-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To')
         // cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship To Name')
         // cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Ship To Address')
         // cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Location')
