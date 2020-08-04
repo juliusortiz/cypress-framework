@@ -1,12 +1,16 @@
 import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
+import SchedObjects from '../../../pageObjects/phoenix/schedulerPage'
 import InvoicingClerkObjects from '../../../pageObjects/phoenix/invoicingClerkPage'
+import DispatcherObjects from '../../../pageObjects/phoenix/dispatcherPage'
 import NotifObjects from '../../../pageObjects/phoenix/notificationPage'
 import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
 
 describe('Scheduler navigation regression testing:', () => {
 
     const globalObjects = new GlobalObjects()
+    const schedObjects = new SchedObjects()
     const invoicingClerkObjects = new InvoicingClerkObjects()
+    const dispatcherObjects = new DispatcherObjects()
     const notifObjects = new NotifObjects()
     const settingsObjects = new SettingsObjects()
 
@@ -27,76 +31,75 @@ describe('Scheduler navigation regression testing:', () => {
     })
 
     it('Dashboard page', function () {
-        cy.get('.menu-label-breed').and('be.have.text', 'Dashboard')
+        schedObjects.schedHeader()
+        invoicingClerkObjects.bulkShipCodeDrop()
+        invoicingClerkObjects.tppDrop()
+        invoicingClerkObjects.driverDrop()
+        invoicingClerkObjects.vehicleDrop()
 
-        cy.get(':nth-child(1) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
-        cy.get('.section-inputs > :nth-child(2) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
-        cy.get(':nth-child(3) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
-        cy.get('.section-inputs > :nth-child(4) > .css-bg1rzq-control > .css-1hwfws3').should('be.visible')
-        cy.get('.header-row--secondary > :nth-child(1)').and('be.have.text', 'Action')
-        cy.get('.header-row--secondary > :nth-child(2)').and('be.have.text', 'Trip Number')
-        cy.get('.header-row--secondary > :nth-child(3)').and('be.have.text', 'Outbound Delivery Number')
-        cy.get('.header-row--secondary > :nth-child(4)').and('be.have.text', 'Sold To')
-        cy.get('.header-row--secondary > :nth-child(5)').and('be.have.text', 'Ship To')
-        cy.get('.header-row--secondary > :nth-child(6)').and('be.have.text', 'Product')
-        cy.get('.header-row--secondary > :nth-child(7)').and('be.have.text', 'Planned Quantity')
-        cy.get('.header-row--secondary > :nth-child(8)').and('be.have.text', 'Unscheduled Quantity')
-        cy.get('[colspan="0"]').and('be.have.text', 'Compartmentation Guide')
-        cy.get('.btn-small').and('be.have.text', 'Add Outbound Number')
-        cy.get('.btn-tertiary-green').should('be.visible').and('be.have.text', 'Submit')
+        invoicingClerkObjects.actionCol0()
+        invoicingClerkObjects.tripNumCol()
+        invoicingClerkObjects.outDelNumCol()
+        invoicingClerkObjects.soldToCol()
+        invoicingClerkObjects.shipToCol()
+        invoicingClerkObjects.productCol()
+        invoicingClerkObjects.plannedQuanCol()
+        invoicingClerkObjects.unscheQuanCol()
+        invoicingClerkObjects.compartGuide()
+        invoicingClerkObjects.addOutBound()
+        invoicingClerkObjects.submitButton()
     })
 
     it('Current Deliveries page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').click()
-        cy.get('[href="/dashboard/dispatcherDashboard"] > .sidebar-menu-item').and('be.have.text', 'Current Deliveries').click()
+        globalObjects.menuButton().click()
+        schedObjects.currDelPage().click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'Current Deliveries')
-        cy.get('.float-right').should('be.visible')
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Trip Ticket No.')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Delivery Instructions')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'SO No.')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Order Approval Date')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'OB No.')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Hauler Name')
-        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Plate No.')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Driver')
-        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Scheduler')
-        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Status')
+        schedObjects.currDelHeader()
+        schedObjects.currDelFilter()
+        schedObjects.currDelSearch()
+        schedObjects.tripCol()
+        schedObjects.delInstCol()
+        schedObjects.soCol()
+        schedObjects.orderAppCol()
+        schedObjects.obNoCol()
+        schedObjects.haulerCol()
+        schedObjects.plateNoCol()
+        schedObjects.driverCol()
+        schedObjects.schedCol()
+        schedObjects.statusCol()
     })
 
     it('Deliveries History page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').click()
-        cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item').and('be.have.text', 'Delivery History').click()
-
-        cy.get('.menu-label-breed').and('be.have.text', 'Delivery History')
-        cy.get('.col-3').should('be.visible')
+        globalObjects.menuButton().click()
+        dispatcherObjects.delHistoryPage().click()
+        dispatcherObjects.delHistoryHeader()
+        dispatcherObjects.delHistorySearch()
 
     })
 
     it('Problems Reported page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').click()
-        cy.get('[href="/dashboard/problems-reported"] > .sidebar-menu-item').and('be.have.text', 'Problems Reported').click()
+        globalObjects.menuButton().click()
+        dispatcherObjects.problemsRepPage().click()
 
-        cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Driver\'s Name')
-        cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Vehicle Code')
-        cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Plate Number')
-        cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Sold To')
-        cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Ship To')
-        cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Location')
-        cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Shipment No.')
-        cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Trip Ticket No.')
-        cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Outbound Delivery No.')
-        cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Date and Time')
-        cy.get('.data-list-table__head > tr > :nth-child(11)').and('be.have.text', 'Reason')
-        cy.get('.data-list-table__head > tr > :nth-child(12)').and('be.have.text', 'Problem Description')
+        dispatcherObjects.driverCol0()
+        dispatcherObjects.vehicleCol0()
+        dispatcherObjects.plateNumCol0()
+        dispatcherObjects.soldToCol()
+        dispatcherObjects.shipToCol()
+        dispatcherObjects.locCol()
+        dispatcherObjects.shipmentNoCol()
+        dispatcherObjects.tripTicketNoCol()
+        dispatcherObjects.outboundDelCol()
+        dispatcherObjects.dateAndTimeCol()
+        dispatcherObjects.reasonCol()
+        dispatcherObjects.problemDescCol()
     })
 
     it('Reasons page', function () {
-        cy.get('.navbar__sidebar-toggle-icon').click()
-        cy.get('[href="/dashboard/manage-reasons-scheduler"] > .sidebar-menu-item').and('be.have.text', 'Reasons').click()
+        globalObjects.menuButton().click()
+        schedObjects.reasonsPage().click()
 
-        cy.get('.menu-label-breed').and('be.have.text', 'Reasons')
-        cy.get('.container__select--active').should('be.visible')
+        dispatcherObjects.reasonsFilter()
     })
 
     it('Notification page', function () {
