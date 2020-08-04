@@ -1,117 +1,156 @@
-// describe('Admin navigation regression testing:', () => {
+import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
+import AdminObjects from '../../../pageObjects/phoenix/adminPage'
+import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
 
-//     before(() => {
-//         cy.navigatePDS()
-//         cy.login({ username: 'pp.sa_1', password: 'P@ssw0rd123' })
-//         cy.headerElements()
-//     })
+describe('Admin navigation regression testing:', () => {
 
-//     after(() => {
-//         cy.settings()
-//         cy.logout()
-//     })
+    const globalObjects = new GlobalObjects()
+    const adminObjects = new AdminObjects()
+    const settingsObjects = new SettingsObjects()
 
-//     beforeEach(() => {
-//         cy.log('Start testing of page elements . . .')
-//     })
+    beforeEach(() => {
+        cy.log('Start test case execution . . .')
+    })
 
-//     afterEach(() => {
-//         cy.log('End of testing of page elements . . . ')
-//     })
+    afterEach(() => {
+        cy.log('End of test case execution . . . ')
+    })
 
-//     it('Dashboard page', function () {
-//         cy.get('.menu-label-breed').and('be.have.text', 'Dashboard')
+    it('Login scheduler', function () {
+        cy.navigatePDS()
+        globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
+        globalObjects.username().type('pp.sa_1').should('have.value', 'pp.sa_1')
+        globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
+        globalObjects.login().click()
+    })
 
-//         cy.get('.mainblock-chart__title').and('be.have.text', 'Statuses Details')
-//         cy.get('.mainblock__chart > .data-list-table > .data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Hauler Name')
-//         cy.get('.mainblock__chart > .data-list-table > .data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Vehicle Code')
-//         cy.get('.mainblock__chart > .data-list-table > .data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Plate Number')
-//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Driver Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Order Date')
-//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Issuing Plant')
-//         cy.get('.main-block-menu-label').and('be.have.text', 'View All')
+    it('Dashboard page', function () {
+        adminObjects.dashHeader()
+        
+        adminObjects.delStatusCont()
 
-//         cy.get('.home-sideblock-title').and('be.have.text', 'Users')
-//         cy.get('.menu-label').and('be.have.text', 'View All')
-//         cy.get('.home-sideblock > .data-list-table > .data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Name')
-//         cy.get('.home-sideblock > .data-list-table > .data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'E-mail')
-//         cy.get('.home-sideblock > .data-list-table > .data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Role')
-//     })
+        adminObjects.haulerCol()
+        adminObjects.vehicleCol()
+        adminObjects.plateNumCol()
+        adminObjects.driverCol()
+        adminObjects.orderCol()
+        adminObjects.issuingCol()
+        adminObjects.viewAll()
 
-//     it('Manage Users page', function () {
-//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-//         cy.get('[href="/dashboard/users"] > .sidebar-menu-item').and('be.have.text', 'Manage Users').click()
+        adminObjects.usersCont()
+        adminObjects.viewAllUsers()
+        adminObjects.nameCol()
+        adminObjects.emailCol()
+        adminObjects.roleCol()
+    })
 
-//         cy.get('.menu-label-breed').and('be.have.text', 'Manage Users')
-//         cy.get('.create-button').and('be.have.text', 'Create User')
+    it('Manage Users page', function () {
+        globalObjects.menuButton().click()
+        adminObjects.manageUsersPage().click()
 
-//         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'First Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Last Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Username')
-//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'E-mail')
-//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Role')
-//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Actions')
+        adminObjects.manageUsersHead()
+        adminObjects.createUserButton()
+        adminObjects.fnameCol()
+        adminObjects.lnameCol()
+        adminObjects.userNameCol()
+        adminObjects.emailCol0()
+        adminObjects.roleCol0()
+        adminObjects.actionsCol()
+        //cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').and('be.have.text', 'Edit')
+        //cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').and('be.have.text', 'Delete')
+    })
 
-//         //cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').and('be.have.text', 'Edit')
-//         //cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').and('be.have.text', 'Delete')
-//     })
+    it('Customers List', function () {
+        globalObjects.menuButton().click()
+        salesObjects.custListPage().click()
 
-//     it('Customers List', function () {
-//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-//         cy.get('[href="/dashboard/customers"] > .sidebar-menu-item').and('be.have.text', 'Customer List').click()
+        salesObjects.custListHeader()
+        salesObjects.soldToCodeCol0()
+        salesObjects.soldToNameCol1()
+        salesObjects.soldToAddCol()
+        salesObjects.fnameCol()
+        salesObjects.lnameCol()
+        salesObjects.usernameCol()
+        salesObjects.emailCol()
+        salesObjects.shipToCol()
+        // cy.get(':nth-child(1) > :nth-child(6) > .table-button-rectangle').and('be.have.text', 'View').click()
+        // cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', '#')
+        // cy.get('.data-l  ist-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To')
+        // cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship To Name')
+        // cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Ship To Address')
+        // cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Location')
+        // cy.get(':nth-child(1) > :nth-child(5) > .data-list__receipt-location-button').should('be.visible').click()
+    })
 
-//         cy.get('.menu-label-breed').and('be.have.text', 'Customer List')
-//         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Code')
-//         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold To Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Sold To Address')
-//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'First Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Last Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Username')
-//         cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'E-mail')
-//         cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', "Ship To")
-//     })
+    it('Delivery Status page', function () {
+        globalObjects.menuButton().click()
+        adminObjects.delStatusPage().click()
 
-//     it('Delivery Status page', function () {
-//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-//         cy.get('[href="/dashboard/manage-delivery-receipts"] > .sidebar-menu-item').and('be.have.text', 'Delivery Status').click()
+        adminObjects.delStatusHead()
+        adminObjects.soldToCol()
+        adminObjects.soldToNameCol()
+        adminObjects.shipToCol()
+        adminObjects.shipToNameCol()
+        adminObjects.soNumCol()
+        adminObjects.soDateCol()
+        adminObjects.orderDetCol()
+        adminObjects.issuingCol0()
+        adminObjects.delInstructCol()
+        adminObjects.statusCol
+        adminObjects.locCol()
+        adminObjects.delInstructCol()
+    })
 
-//         cy.get('.menu-label-breed').and('be.have.text', 'Delivery Status')
-//         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold to Code')
-//         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Sold to Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'Ship to Code')
-//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Ship to Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'SO Number')
-//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'SO Date')
-//         cy.get('.data-list-table__head > tr > :nth-child(7)').and('be.have.text', 'Order Details')
-//         cy.get('.data-list-table__head > tr > :nth-child(8)').and('be.have.text', 'Issuing Plant')
-//         cy.get('.data-list-table__head > tr > :nth-child(9)').and('be.have.text', 'Delivery Instructions')
-//         cy.get('.data-list-table__head > tr > :nth-child(10)').and('be.have.text', 'Status')
-//         cy.get('.data-list-table__head > tr > :nth-child(11)').and('be.have.text', 'Location')
-//         cy.get('.data-list-table__head > tr > :nth-child(12)').and('be.have.text', 'Delivery Receipt')
-//     })
+    it('Manage Reasons page', function () {
+        globalObjects.menuButton().click()
+        adminObjects.manageReasonsPage().click()
 
-//     it('Manage Reasons page', function () {
-//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-//         cy.get('[href="/dashboard/manage-reasons"] > .sidebar-menu-item').and('be.have.text', 'Manage Reasons').click()
+        adminObjects.manageReasonHead()
+        adminObjects.addReasonButton()
+        adminObjects.reasonFilter()
+        adminObjects.editButton()
+        adminObjects.deleteButton()
+    })
 
-//         cy.get('.menu-label-breed').and('be.have.text', 'Manage Reasons')
-//         cy.get(':nth-child(3) > :nth-child(1) > .btn').should('be.visible').and('contain', 'Add New Reason')
-//         cy.get('[style="color: rgb(102, 196, 67);"]').should('be.visible')
-//         cy.get(':nth-child(1) > :nth-child(2) > div > #edit_reason').should('be.visible').and('contain', 'Edit')
-//         cy.get(':nth-child(1) > :nth-child(2) > div > #delete_reason').should('be.visible').and('contain', 'Delete')
-//     })
+    it('Image Submitted page', function () {
+        globalObjects.menuButton().click()
+        adminObjects.imageSubmitPage().click()
+        
+        adminObjects.soldToNameCol0()
+        adminObjects.shipToNameCol0()
+        adminObjects.drNumCol()
+        adminObjects.lastUpdateCol()
+        adminObjects.imgTypeCol()
+        adminObjects.imgFileCol()
+    })
 
-//     it('Image Submitted page', function () {
-//         cy.get('.navbar__sidebar-toggle-icon').should('be.visible').click()
-//         cy.get('[href="/dashboard/image-submitted"] > .sidebar-menu-item').and('be.have.text', 'Image Submitted').click()
+    it('Settings page', function () {
+        globalObjects.profileDropdown().click()
+        globalObjects.settingsButton().click()
 
-//         cy.get('.menu-label-breed').and('be.have.text', 'Image Submitted')
-//         cy.get('.data-list-table__head > tr > :nth-child(1)').and('be.have.text', 'Sold To Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(2)').and('be.have.text', 'Ship To Name')
-//         cy.get('.data-list-table__head > tr > :nth-child(3)').and('be.have.text', 'DR Number')
-//         cy.get('.data-list-table__head > tr > :nth-child(4)').and('be.have.text', 'Last Update')
-//         cy.get('.data-list-table__head > tr > :nth-child(5)').and('be.have.text', 'Image Type')
-//         cy.get('.data-list-table__head > tr > :nth-child(6)').and('be.have.text', 'Image File')
-//     })
-// })
+        settingsObjects.usernameField().type('jdelacruz')
+            .should('have.value', 'jdelacruz')
+        settingsObjects.emailField().type('juandelacruz2020@mailinator.com')
+            .should('have.value', 'juandelacruz2020@mailinator.com')
+        settingsObjects.passwordField().type('P@ssw0rd123')
+            .should('have.value', 'P@ssw0rd123')
+        settingsObjects.contactNumber().type('09356285322')
+            .should('have.value', '09356285322')
+        settingsObjects.saveButton()
+
+        settingsObjects.sendFeedbackTab().click()
+        settingsObjects.textArea().type('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
+            .should('have.value', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
+        settingsObjects.submitButton()
+
+        settingsObjects.AboutthisAppTab().click()
+        settingsObjects.AboutthisAppContainer()
+    })
+
+    it('Logout', function () {
+        globalObjects.profileDropdown().click()
+        globalObjects.userPopUp()
+        globalObjects.logoutButton().click()
+    })
+})
 

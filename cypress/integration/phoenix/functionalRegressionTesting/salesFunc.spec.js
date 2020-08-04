@@ -11,7 +11,7 @@ describe('Sales functional regression testing:', () => {
   it('Login sales user', function () {
     cy.navigatePDS()
     globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
-    globalObjects.username().type('pp.sl_1 ').should('have.value', 'pp.sl_1')
+    globalObjects.username().type('pp.sl_1').should('have.value', 'pp.sl_1')
     globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
     globalObjects.login().click()
   })

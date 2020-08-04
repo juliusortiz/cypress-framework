@@ -11,7 +11,7 @@ describe('Scheduler functional regression testing:', () => {
   it('Login scheduler user', function () {
     cy.navigatePDS()
     globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
-    globalObjects.username().type('pp.sch_1)').should('have.value', 'pp.sch_1')
+    globalObjects.username().type('pp.sch_1').should('have.value', 'pp.sch_1')
     globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
     globalObjects.login().click()
   })

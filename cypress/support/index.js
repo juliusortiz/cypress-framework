@@ -24,7 +24,7 @@ require('cypress-dark')
 
 
 import './commands'
-import './commandsAdmin'
+
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
