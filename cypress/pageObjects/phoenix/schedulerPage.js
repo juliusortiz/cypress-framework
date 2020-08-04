@@ -18,7 +18,7 @@ class schedObject {
 
     currDelFilter() {
         return cy.get('.container__select--active')
-            .and('be.have.text', 'Current Deliveries')
+            .and('be.have.text', 'Filter')
     }
 
     currDelSearch() {
