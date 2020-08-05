@@ -1,11 +1,13 @@
 import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
 import AdminObjects from '../../../pageObjects/phoenix/adminPage'
+import SalesObjects from '../../../pageObjects/phoenix/salesPage'
 import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
 
 describe('Admin navigation regression testing:', () => {
 
     const globalObjects = new GlobalObjects()
     const adminObjects = new AdminObjects()
+    const salesObjects = new SalesObjects()
     const settingsObjects = new SettingsObjects()
 
     beforeEach(() => {

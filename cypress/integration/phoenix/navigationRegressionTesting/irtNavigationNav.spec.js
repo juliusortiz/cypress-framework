@@ -2,7 +2,7 @@ import GlobalObjects from '../../../pageObjects/phoenix/globalAttrib'
 import NotifObjects from '../../../pageObjects/phoenix/notificationPage'
 import SettingsObjects from '../../../pageObjects/phoenix/settingsPage'
 
-describe('IRT functional regression testing:', () => {
+describe('IRT navigation regression testing:', () => {
 
   const globalObjects = new GlobalObjects()
   const notifObjects = new NotifObjects()
