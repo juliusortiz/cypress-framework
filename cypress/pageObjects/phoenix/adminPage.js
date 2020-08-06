@@ -81,7 +81,7 @@ class adminObjects {
             .and('be.have.text', 'Manage Users')
     }
 
-    createUserButton() {
+    createButton() {
         return cy.get('.create-button')
             .and('be.have.text', 'Create User')
     }
@@ -116,99 +116,77 @@ class adminObjects {
             .and('be.have.text', 'Actions')
     }
 
-// Cypress.Commands.add('CreateUser', (input) => {
-//     cy.log('Test create user')
-//     cy.get('.create-button').click()
-//     cy.get('#username').type(input.user).should('have.value', input.user)
-//     cy.get('#email').type(input.email).should('have.value', input.email)
-//     cy.get('#first_name').type(input.fname).should('have.value', input.fname)
-//     cy.get('#last_name').type(input.lname).should('have.value', input.lname)
-// })
+    userField(input) {
+        return cy.get('#username').clear()
+            .type(input.user)
+            .should('have.value', input.user)
+    }
 
-// Cypress.Commands.add('EditUser', (input) => {
-//     cy.log('Test edit the created user')
-//     cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user').click()
-//     cy.get('#email').clear().
-//         type(input.email_edited).should('have.value', input.email_edited)
-//     cy.get('#first_name').clear()
-//         .type(input.fname_edited).should('have.value', input.fname_edited)
-//     cy.get('#last_name').clear()
-//         .type(input.lname_edited).should('have.value', input.lname_edited)
-// })
+    emailField(input) {
+        return cy.get('#email').clear()
+            .type(input.email)
+            .should('have.value', input.email)
+    }
 
+    fnameField(input) {
+        return cy.get('#first_name').clear()
+            .type(input.fname)
+            .should('have.value', input.fname)
+    }
 
-// Cypress.Commands.add('DeleteUser', () => {
-//     cy.log('Test delete the created user')
-//     cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user').click()
-//     cy.get('.action-button-red').click()
-//     cy.log('Successfully deleted admin user!')
-// })
+    lnameField(input) {
+        return cy.get('#last_name').clear()
+            .type(input.lname)
+            .should('have.value', input.lname)
+    }
 
-// Cypress.Commands.add('SelectRoleSales', () => {
-//     cy.get('.container__dateSelect--active').click()
-//     cy.wait(500)
-//     cy.get('.container__options-div > :nth-child(1)').click()
-// })
+    createUserButton() {
+        return cy.get('.action-button-green')
+    }
 
-// Cypress.Commands.add('SelectRoleIRT', () => {
-//     cy.get('.container__dateSelect--active').click()
-//     cy.wait(500)
-//     cy.get('.container__options-div > :nth-child(2)').click()
-// })
+    dropdownRole() {
+        return cy.get('.container__dateSelect--active')
+    }
 
-// Cypress.Commands.add('SelectRoleScheduler', () => {
-//     cy.get('.container__dateSelect--active').click()
-//     cy.wait(500)
-//     cy.get('.container__options-div > :nth-child(3)').click()
-// })
+    schedRole() {
+        return cy.get('.container__options-div > :nth-child(1)')
+    }
 
-// Cypress.Commands.add('SelectRoleinvoicingClerk', () => {
-//     cy.get('.container__dateSelect--active').click()
-//     cy.wait(500)
-//     cy.get('.container__options-div > :nth-child(4)').click()
-// })
+    irtRole() {
+        return cy.get('.container__options-div > :nth-child(2)')
+    }
 
-// Cypress.Commands.add('SelectRoleDispatcher', () => {
-//     cy.get('.container__dateSelect--active').click()
-//     cy.wait(500)
-//     cy.get('.container__options-div > :nth-child(5)').click()
-// })
+    dispatRole() {
+        return cy.get('.container__options-div > :nth-child(3)')
+    }
 
+    saRole() {
+        return cy.get('.container__options-div > :nth-child(4)')
+    }
 
+    invRole() {
+        return cy.get('.container__options-div > :nth-child(5)')
+    }
 
+    editUserButton() {
+        return cy.get(':nth-child(1) > :nth-child(6) > div > #edit_user')
+    }
 
+    updateUserButton() {
+        return cy.get('.modal-footer > .action-button-orange')
+    }
 
+    deleteUserButton() {
+        return cy.get(':nth-child(1) > :nth-child(6) > div > #delete_user')
+    }
 
+    deleteCancel() {
+        return cy.get('.pr-4 > .action-button-orange')
+    }
 
-// Cypress.Commands.add('CreateReason', (input) => {
-//     cy.log('Test create reason')
-//     cy.get(':nth-child(3) > :nth-child(1) > .btn').click()
-//     cy.get('#name').type(input.reason).should('have.value', input.reason)
-//     cy.get('.modal-footer__action').and('be.have.text', 'Add').click()
-// })
-
-// Cypress.Commands.add('EditReason', (input) => {
-//     cy.log('Test edit reason')
-//     cy.get('#name').clear()
-//         .type(input.reason_edited).should('have.value', input.reason_edited)
-//     cy.get('.modal-footer__action').and('be.have.text', 'EDIT').click()
-// })
-
-// Cypress.Commands.add('DeleteReason', () => {
-//     cy.log('Test delete reason')
-//     cy.get('.action-button-red').and('be.have.text', 'Yes').click()
-// })
-
-
-// Cypress.Commands.add('SelectReasonPartiallyAccepted', () => {
-//     cy.get('.container__select--active').click()
-//     cy.get('[value="Partially Accepted"]').click()
-// })
-
-// Cypress.Commands.add('SelectReasonProblemsReported', () => {
-//     cy.get('.container__select--active').click()
-//     cy.get('[value="Problems Reported"]').click()
-// })
+    deleteConfirm() {
+        return cy.get('.action-button-red')
+    }
 
     ////////////////////////////////////////////////Delivery status page
     delStatusPage() {
@@ -297,6 +275,36 @@ class adminObjects {
             .should('be.visible')
             .and('contain', 'Add New Reason')
     }
+     // Cypress.Commands.add('CreateReason', (input) => {
+    //     cy.log('Test create reason')
+    //     cy.get(':nth-child(3) > :nth-child(1) > .btn').click()
+    //     cy.get('#name').type(input.reason).should('have.value', input.reason)
+    //     cy.get('.modal-footer__action').and('be.have.text', 'Add').click()
+    // })
+
+    // Cypress.Commands.add('EditReason', (input) => {
+    //     cy.log('Test edit reason')
+    //     cy.get('#name').clear()
+    //         .type(input.reason_edited).should('have.value', input.reason_edited)
+    //     cy.get('.modal-footer__action').and('be.have.text', 'EDIT').click()
+    // })
+
+    // Cypress.Commands.add('DeleteReason', () => {
+    //     cy.log('Test delete reason')
+    //     cy.get('.action-button-red').and('be.have.text', 'Yes').click()
+    // })
+
+
+    // Cypress.Commands.add('SelectReasonPartiallyAccepted', () => {
+    //     cy.get('.container__select--active').click()
+    //     cy.get('[value="Partially Accepted"]').click()
+    // })
+
+    // Cypress.Commands.add('SelectReasonProblemsReported', () => {
+    //     cy.get('.container__select--active').click()
+    //     cy.get('[value="Problems Reported"]').click()
+    // })
+
 
     reasonFilter() {
         return cy.get('[style="color: rgb(102, 196, 67);"]')
