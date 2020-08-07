@@ -77,43 +77,7 @@ class customerObjects {
             .should('be.visible')
     }
 
-    drNoCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(1)')
-            .and('be.have.text', 'DR No.')
-    }
-
-    delDateCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(2)')
-            .and('be.have.text', 'Delivery Date')
-    }
-
-    driverNameCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(3)')
-            .and('be.have.text', 'Driver\'s Name')
-    }
-
-    vehicleCodeCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(4)')
-            .and('be.have.text', 'Vehicle Code')
-    }
-
-    plateNumCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(5)')
-            .and('be.have.text', 'Plate Number')
-    }
-
-    issuingPlantCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(6)')
-            .and('be.have.text', 'Issuing Plant')
-    }
-
-    actionCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(7)')
-            .and('be.have.text', 'Action')
-    }
-
     ////////////////////////////////////////////////CDSS Profile page
-
     cdssProfile() {
         return cy.get('[href="/dashboard/cdss-profile"] > .customer-sidebar__item')
             .and('be.have.text', 'CDSS Profile')
@@ -170,33 +134,7 @@ class customerObjects {
             .and('be.have.text', 'The following persons whose names and signatures appear below are authorized to receive products.Click here to view the terms and conditions of this form.')
     }
 
-    fnameCol() {
-        return cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(1)')
-            .and('be.have.text', 'First Name')
-    }
-
-    lnameCol() {
-        return cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(2)')
-            .and('be.have.text', 'Last Name')
-    }
-
-    shipToCol() {
-        return cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(3)')
-            .and('be.have.text', 'Ship To')
-    }
-
-    phoneNumCol() {
-        return cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(4)')
-            .and('be.have.text', 'Phone Number')
-    }
-
-    signatureCol() {
-        return cy.get('.table-responsive > .data-list-table__head > tr > :nth-child(5)')
-            .and('be.have.text', 'Signature')
-    }
-
     ////////////////////////////////////////////////CDSS Profile page > Manage CDSS tab
-
     manageCDSSTAB() {
         return cy.get('.header-buttons > :nth-child(2)')
             .and('be.have.text', 'MANAGE CDSS')
@@ -217,23 +155,6 @@ class customerObjects {
         return cy.get('.CDSSDescription > p')
             .should('be.visible')
     }
-
-    lnameCol1() {
-        return cy.get('.data-list-table__head > tr > :nth-child(2)')
-            .and('be.have.text', 'Last name')
-    }
-
-    phoneNumCol1() {
-        return cy.get('.data-list-table__head > tr > :nth-child(3)')
-            .and('be.have.text', 'Phone Number')
-    }
-
-    signatureCol1() {
-        return cy.get('.data-list-table__head > tr > :nth-child(4)')
-            .and('be.have.text', 'Signature')
-    }
-
-
 }
 
 export default customerObjects

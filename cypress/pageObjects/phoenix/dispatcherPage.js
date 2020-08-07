@@ -14,52 +14,6 @@ class dispatcherObjects {
         return cy.get('.float-right')
             .should('be.visible')
     }
-
-    tripCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(1)')
-            .and('be.have.text', 'Trip Ticket No.')
-    }
-
-    delInstrucCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(2)')
-            .and('be.have.text', 'Delivery Instructions')
-    }
-
-    soNoCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(3)')
-            .and('be.have.text', 'SO No.')
-    }
-
-    orderAppDateCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(4)')
-            .and('be.have.text', 'Order Approval Date')
-    }
-
-    obNoCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(5)')
-            .and('be.have.text', 'OB No.')
-    }
-
-    haulerCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(6)')
-            .and('be.have.text', 'Hauler Name')
-    }
-
-    plateNumCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(7)')
-            .and('be.have.text', 'Plate No.')
-    }
-
-    driverCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(8)')
-            .and('be.have.text', 'Driver')
-    }
-
-    statusCol() {
-        return cy.get('.data-list-table__head > tr > :nth-child(9)')
-            .and('be.have.text', 'Status')
-    }
-
     ////////////////////////////////////////////////Delivery history page
 
     delHistoryPage() {

@@ -62,13 +62,13 @@ describe('Customer navigation regression testing:', () => {
         customerObjects.historyfield()
         customerObjects.historyTimeFrame()
 
-        customerObjects.drNoCol()
-        customerObjects.delDateCol()
-        customerObjects.driverNameCol()
-        customerObjects.vehicleCodeCol()
-        customerObjects.plateNumCol()
-        customerObjects.issuingPlantCol()
-        customerObjects.actionCol()
+        cy.get('thead>tr').find('th').eq(0).contains('DR No.')
+        cy.get('thead>tr').find('th').eq(1).contains('Delivery Date')
+        cy.get('thead>tr').find('th').eq(2).contains('Driver\'s Name')
+        cy.get('thead>tr').find('th').eq(3).contains('Vehicle Code')
+        cy.get('thead>tr').find('th').eq(4).contains('Plate Number')
+        cy.get('thead>tr').find('th').eq(5).contains('Issuing Plant')
+        cy.get('thead>tr').find('th').eq(6).contains('Action')
     })
 
     it('CDSS Profile page', function () {
@@ -87,13 +87,12 @@ describe('Customer navigation regression testing:', () => {
         customerObjects.cdssH4()
         customerObjects.cdssParagraph()
 
-        customerObjects.fnameCol()
-        customerObjects.lnameCol()
-        customerObjects.shipToCol()
-        customerObjects.phoneNumCol()
-        customerObjects.signatureCol()
-
-
+        cy.get('thead>tr').find('th').eq(0).contains('First Name')
+        cy.get('thead>tr').find('th').eq(1).contains('Last Name')
+        cy.get('thead>tr').find('th').eq(2).contains('Ship To')
+        cy.get('thead>tr').find('th').eq(3).contains('Phone Number')
+        cy.get('thead>tr').find('th').eq(4).contains('Signature')
+       
         customerObjects.manageCDSSTAB().click({ force: true })
         customerObjects.cdssLogo()
         customerObjects.cdssH3()
@@ -106,11 +105,10 @@ describe('Customer navigation regression testing:', () => {
         customerObjects.cdssH4()
         customerObjects.cdssDescription()
         //cy.get('.CDSSDescription > p').and('be.have.text', 'The following persons whose names and signature appear below are authorized to receive products. Click here to view the terms and conditions of this form')
-        customerObjects.fnameCol()
-        customerObjects.lnameCol1()
-        customerObjects.phoneNumCol1()
-        customerObjects.signatureCol1()
-
+        cy.get('thead>tr').find('th').eq(0).contains('First Name')
+        cy.get('thead>tr').find('th').eq(0).contains('Last name')
+        cy.get('thead>tr').find('th').eq(0).contains('Phone Number')
+        cy.get('thead>tr').find('th').eq(0).contains('Signature')
         // cy.get('.header-buttons > :nth-child(3)').and('be.have.text', 'TERMS & CONDITIONS').click({ force: true })
         // cy.get('.cdss_logo').should('be.visible')
         // cy.get('h3').and('be.have.text', 'Phoenix Petroleum Philippines Inc') 
