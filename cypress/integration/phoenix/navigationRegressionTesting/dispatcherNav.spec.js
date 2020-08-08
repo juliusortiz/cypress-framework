@@ -21,16 +21,22 @@ describe('Dispatcher navigation regression testing:', () => {
 
     it('Login dispatcher', function () {
         cy.navigatePDS()
-        globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
-        globalObjects.username().type('pp.dp_1').should('have.value', 'pp.dp_1')
-        globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
+        globalObjects.businesstype().select('Phoenix Petroleum')
+            .should('have.value', 'PP')
+        globalObjects.username().type('pp.dp_1')
+            .should('have.value', 'pp.dp_1')
+        globalObjects.password().type('P@ssw0rd123')
+            .should('have.value', 'P@ssw0rd123')
         globalObjects.login().click()
     })
 
     it('Dashboard page', function () {
-        dispatcherObjects.dashHeader()
+        globalObjects.pageTitle()
+            .and('be.have.text', 'Dashboard')
         dispatcherObjects.dashFilter()
+            .should('be.visible')
         dispatcherObjects.dashSearch()
+            .should('be.visible')
 
         cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
         cy.get('thead>tr').find('th').eq(1).contains('Delivery Instructions')
@@ -45,9 +51,14 @@ describe('Dispatcher navigation regression testing:', () => {
 
     it('Delivery history page', function () {
         globalObjects.menuButton().click()
-        dispatcherObjects.delHistoryPage().click()
-        dispatcherObjects.delHistoryHeader()
+        dispatcherObjects.delHistoryPage()
+            .and('be.have.text', 'Delivery History').click()
+
+        globalObjects.pageTitle()
+
+            .and('be.have.text', 'Delivery History')
         dispatcherObjects.delHistorySearch()
+            .should('be.visible')
     })
 
     it('Problems Reported page', function () {

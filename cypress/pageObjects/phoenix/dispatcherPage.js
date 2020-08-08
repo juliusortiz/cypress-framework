@@ -1,35 +1,20 @@
 class dispatcherObjects {
     ////////////////////////////////////////////////Dashboard page
-    dashHeader() {
-        return cy.get('.menu-label-breed').should('be.visible')
-            .and('contain', 'Dashboard')
-    }
-
     dashFilter() {
-        return cy.get('.container__select--active')
-            .should('be.visible')
+        return cy.get('.container__select--active')     
     }
 
     dashSearch() {
-        return cy.get('.float-right')
-            .should('be.visible')
+        return cy.get('.float-right')  
     }
+
     ////////////////////////////////////////////////Delivery history page
-
     delHistoryPage() {
-        return cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item')
-            .and('be.have.text', 'Delivery History')
-
-    }
-
-    delHistoryHeader() {
-        return cy.get('.menu-label-breed')
-            .and('be.have.text', 'Delivery History')
+        return cy.get('[href="/dashboard/deliveries-history"] > .sidebar-menu-item') 
     }
 
     delHistorySearch() {
         return cy.get('.col-3')
-            .should('be.visible')
     }
 
     ////////////////////////////////////////////////Problems reported page

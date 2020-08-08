@@ -21,6 +21,10 @@ class globalObjects {
             .should('be.visible')
     }
 
+    pageTitle() {
+        return cy.get('.menu-label-breed')
+    }
+
     profileDropdown() {
         return cy.get('.navbar__dropdown-toggle-icon')
             .should('be.visible')
