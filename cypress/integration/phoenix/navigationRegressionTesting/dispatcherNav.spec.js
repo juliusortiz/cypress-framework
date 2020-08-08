@@ -55,50 +55,51 @@ describe('Dispatcher navigation regression testing:', () => {
             .and('be.have.text', 'Delivery History').click()
 
         globalObjects.pageTitle()
-
             .and('be.have.text', 'Delivery History')
+
         dispatcherObjects.delHistorySearch()
             .should('be.visible')
     })
 
     it('Problems Reported page', function () {
         globalObjects.menuButton().click()
-        dispatcherObjects.problemsRepPage().click()
+        dispatcherObjects.problemsRepPage()
+            .and('be.have.text', 'Problems Reported').click()
+
+        globalObjects.pageTitle()
+            .and('be.have.text', 'Problems Reported')
 
         cy.get('thead>tr').find('th').eq(0).contains('Driver\'s Name')
-        cy.get('thead>tr').find('th').eq(0).contains('Vehicle Code')
-        cy.get('thead>tr').find('th').eq(0).contains('Plate Number')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        cy.get('thead>tr').find('th').eq(0).contains('Trip Ticket No.')
-        dispatcherObjects.vehicleCol0()
-        dispatcherObjects.plateNumCol0()
-        dispatcherObjects.soldToCol()
-        dispatcherObjects.shipToCol()
-        dispatcherObjects.locCol()
-        dispatcherObjects.shipmentNoCol()
-        dispatcherObjects.tripTicketNoCol()
-        dispatcherObjects.outboundDelCol()
-        dispatcherObjects.dateAndTimeCol()
-        dispatcherObjects.reasonCol()
-        dispatcherObjects.problemDescCol()
+        cy.get('thead>tr').find('th').eq(1).contains('Vehicle Code')
+        cy.get('thead>tr').find('th').eq(2).contains('Plate Number')
+        cy.get('thead>tr').find('th').eq(3).contains('Sold To')
+        cy.get('thead>tr').find('th').eq(4).contains('Ship To')
+        cy.get('thead>tr').find('th').eq(5).contains('Location')
+        cy.get('thead>tr').find('th').eq(6).contains('Shipment No.')
+        cy.get('thead>tr').find('th').eq(7).contains('Trip Ticket No.')
+        cy.get('thead>tr').find('th').eq(8).contains('Outbound Delivery No.')
+        cy.get('thead>tr').find('th').eq(9).contains('Date and Time')
+        cy.get('thead>tr').find('th').eq(10).contains('Reason')
+        cy.get('thead>tr').find('th').eq(11).contains('Problem Description')
+        cy.get('thead>tr').find('th').eq(12).contains('Action')
     })
 
     it('Reasons page', function () {
         globalObjects.menuButton().click()
-        dispatcherObjects.reasonsPage().click()
+        dispatcherObjects.reasonsPage()
+            .and('be.have.text', 'Reasons').click()
+
+        globalObjects.pageTitle()
+            .and('be.have.text', 'Reasons')
 
         dispatcherObjects.reasonsFilter()
+            .should('be.visible')
     })
 
     it('Notification page', function () {
         notifObjects.notifBell().click()
-        notifObjects.notifTitle()
+        globalObjects.pageTitle()
+            .and('be.have.text', 'Notifications')
         notifObjects.refreshButton()
     })
 
