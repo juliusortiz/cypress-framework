@@ -9,7 +9,7 @@ class adminObjects {
     }
 
     usersCont() {
-        return cy.get('.home-sideblock-title') 
+        return cy.get('.home-sideblock-title')
     }
 
     viewAllUsers() {
@@ -18,11 +18,11 @@ class adminObjects {
 
     ////////////////////////////////////////////////Manage users page
     manageUsersPage() {
-        return cy.get('[href="/dashboard/users"] > .sidebar-menu-item')   
+        return cy.get('[href="/dashboard/users"] > .sidebar-menu-item')
     }
 
     createButton() {
-        return cy.get('.create-button')   
+        return cy.get('.create-button')
     }
 
     userField(input) {
@@ -107,55 +107,42 @@ class adminObjects {
         return cy.get('[href="/dashboard/manage-reasons"] > .sidebar-menu-item')
     }
 
-    addReasonButton() {
+    addReason() {
         return cy.get(':nth-child(3) > :nth-child(1) > .btn')
     }
-     // Cypress.Commands.add('CreateReason', (input) => {
-    //     cy.log('Test create reason')
-    //     cy.get(':nth-child(3) > :nth-child(1) > .btn').click()
-    //     cy.get('#name').type(input.reason).should('have.value', input.reason)
-    //     cy.get('.modal-footer__action').and('be.have.text', 'Add').click()
-    // })
 
-    // Cypress.Commands.add('EditReason', (input) => {
-    //     cy.log('Test edit reason')
-    //     cy.get('#name').clear()
-    //         .type(input.reason_edited).should('have.value', input.reason_edited)
-    //     cy.get('.modal-footer__action').and('be.have.text', 'EDIT').click()
-    // })
-
-    // Cypress.Commands.add('DeleteReason', () => {
-    //     cy.log('Test delete reason')
-    //     cy.get('.action-button-red').and('be.have.text', 'Yes').click()
-    // })
-
-
-    // Cypress.Commands.add('SelectReasonPartiallyAccepted', () => {
-    //     cy.get('.container__select--active').click()
-    //     cy.get('[value="Partially Accepted"]').click()
-    // })
-
-    // Cypress.Commands.add('SelectReasonProblemsReported', () => {
-    //     cy.get('.container__select--active').click()
-    //     cy.get('[value="Problems Reported"]').click()
-    // })
-
-
-    reasonFilter() {
-        return cy.get('[style="color: rgb(102, 196, 67);"]')
+    textArea(input) {
+        return cy.get('.manage-reasons-textarea-container')
+            .type(input.reason)
+            //.should('have.value', input.reason)
     }
 
-    editButton() {
-        return cy.get(':nth-child(1) > :nth-child(2) > div > #edit_reason')
+    addButton() {
+        return cy.get('.modal-footer__action')
     }
 
-    deleteButton() {
-        return cy.get(':nth-child(1) > :nth-child(2) > div > #delete_reason')
+    deleteNo() {
+        return cy.get('.action-button-orange')
     }
 
+    deleteYes() {
+        return cy.get('.action-button-red')
+    }
+
+    reasonDropDown() {
+        return cy.get('.container__select--active')
+    }
+
+    filterPartial() {
+        return cy.get('[value="Partially Accepted"]')
+    }
+
+    filterProblems() {
+        return cy.get('[value="Problems Reported"]')
+    }
     ////////////////////////////////////////////////Image submitted page
     imageSubmitPage() {
-        return cy.get('[href="/dashboard/image-submitted"] > .sidebar-menu-item')     
+        return cy.get('[href="/dashboard/image-submitted"] > .sidebar-menu-item')
     }
 }
 

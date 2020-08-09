@@ -277,65 +277,124 @@ describe('Super admin functional regression testing:', () => {
         adminObjects.deleteUserButton().click()
         adminObjects.deleteConfirm().click()
         cy.log('Successfully deleted invoicing clerk user')
+    })
+
+    it('Manage Reasons', function () {
+        globalObjects.menuButton().click()
+        adminObjects.manageReasonsPage().click()
+
+        cy.log('Add backload reason')
+        adminObjects.addReason().click()
+        adminObjects.textArea({
+            reason: 'This is automated generated reason'
+        })
+        adminObjects.addButton().click()
+        cy.log('Successfully added backload reason')
+        cy.wait(1000)
+
+        cy.log('Edit backload reason')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Edit').click()
+        adminObjects.textArea({
+            reason: ' edited'
+        })
+        adminObjects.addButton().click()
+        cy.log('Successfully edited backload reason')
+        cy.wait(1000)
+
+        cy.log('Test cancel delete')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Delete').click()
+        cy.wait(1000)
+        adminObjects.deleteNo().click()
+        cy.log('Cancel delete successfull')
+        cy.wait(1000)
+
+        cy.log('Delete backload reason')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Delete').click()
+        cy.wait(1000)
+        adminObjects.deleteYes().click()
+        cy.log('Delete backload reason successfull')
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // it('Manage Reasons', function () {
-        //     globalObjects.menuButton().click()
-        //     adminObjects.manageReasonsPage().click()
+        adminObjects.reasonDropDown().click()
+        adminObjects.filterPartial().click()
 
-        //     globalObjects.table().find(globalObjects.row()).last()
-        //         .should('be.have.text', 'OthersDeleteEdit')
+        cy.log('Add partially accepted reason')
+        adminObjects.addReason().click()
+        adminObjects.textArea({
+            reason: 'This is automated generated reason'
+        })
+        adminObjects.addButton().click()
+        cy.log('Successfully added partially accepted reason')
+        cy.wait(1000)
 
+        cy.log('Edit partially accepted reason')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Edit').click()
+        adminObjects.textArea({
+            reason: ' edited'
+        })
+        adminObjects.addButton().click()
+        cy.log('Successfully edited partially accepted reason')
+        cy.wait(1000)
 
-        //     cy.log('CRUD Backload reason')
-        //     cy.CreateReason({
-        //         reason: 'This is automated created reason for Backload'
-        //     })
+        cy.log('Delete partially accepted reason')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Delete').click()
+        cy.wait(1000)
+        adminObjects.deleteYes().click()
+        cy.log('Delete partially accepted reason successfull')
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        adminObjects.reasonDropDown().click()
+        adminObjects.filterProblems().click()
 
-        //     cy.log('Access the last page of the list')
-        //     cy.get(':nth-child(3) > .table-pagination__link').click()
-        //     cy.wait(2000)
-        //     cy.get(':nth-child(2) > :nth-child(2) > div > #edit_reason').click()
-        //     cy.EditReason({
-        //         reason_edited: 'This is automated created reason for Backload edited'
-        //     })
+        cy.log('Add problems reported reason')
+        adminObjects.addReason().click()
+        adminObjects.textArea({
+            reason: 'This is automated generated reason'
+        })
+        adminObjects.addButton().click()
+        cy.log('Successfully added partially accepted reason')
+        cy.wait(1000)
 
-        //     cy.wait(2000)
-        //     cy.get(':nth-child(2) > :nth-child(2) > div > #delete_reason').click()
-        //     cy.DeleteReason()
-        //     cy.log('Done CRUD Backload reason')
-        //     /////////////////////////////////////////////////////////////////////////////////////////
-        //     cy.log('CRUD Partial acceptace reason')
-        //     cy.SelectReasonPartiallyAccepted()
-        //     cy.CreateReason({
-        //         reason: 'This is automated created reason for partially acceptance'
-        //     })
+        cy.log('Edit problems reported reason')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Edit').click()
+        adminObjects.textArea({
+            reason: ' edited'
+        })
+        adminObjects.addButton().click()
+        cy.log('Successfully edited problems reported reason')
+        cy.wait(1000)
 
-        //     cy.get(':nth-child(6) > :nth-child(2) > div > #edit_reason').click()
-        //     cy.EditReason({
-        //         reason_edited: 'This is automated created reason for partially acceptance edited'
-        //     })
-
-        //     cy.wait(2000)
-        //     cy.get(':nth-child(6) > :nth-child(2) > div > #delete_reason').click()
-        //     cy.DeleteReason()
-        //     cy.log('Done CRUD Partial Acceptance reason')
-        //     /////////////////////////////////////////////////////////////////////////////////////////
-        //     cy.log('CRUD Problems Reported reason')
-        //     cy.SelectReasonProblemsReported()
-        //     cy.CreateReason({
-        //         reason: 'This is automated created reason for Problems Reported'
-        //     })
-
-        //     cy.wait(2000)
-        //     cy.get(':nth-child(3) > :nth-child(2) > div > #edit_reason').click()
-        //     cy.EditReason({
-        //         reason_edited: 'This is automated created reason for Problems Reported edited'
-        //     })
-
-        //     cy.wait(2000)
-        //     cy.get(':nth-child(3) > :nth-child(2) > div > #delete_reason').click()
-        //     cy.DeleteReason()
-        //     cy.log('Done CRUD Problems Reported reason')
+        cy.log('Delete problems reported reason')
+        cy.get('tbody>tr')
+            .last()
+            .find('td')
+            .last()
+            .contains('Delete').click()
+        cy.wait(1000)
+        adminObjects.deleteYes().click()
+        cy.log('Delete problems reported reason successfull')
     })
 
     it('Settings page', function () {
