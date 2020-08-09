@@ -170,7 +170,6 @@ describe('Customer navigation regression testing:', () => {
         customerObjects.navTitle()
             .and('be.have.text', 'Notification')
         notifObjects.refreshButton()
-
     })
 
     it('Settings page', function () {

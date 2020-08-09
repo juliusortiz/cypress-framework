@@ -21,17 +21,17 @@ describe('Invoicing clerk navigation regression testing:', () => {
     it('Login invoicing clerk', function () {
         cy.navigatePDS()
         globalObjects.businesstype().select('Phoenix Petroleum')
-        .should('have.value', 'PP')
+            .should('have.value', 'PP')
         globalObjects.username().type('pp.inv_1')
-        .should('have.value', 'pp.inv_1')
+            .should('have.value', 'pp.inv_1')
         globalObjects.password().type('P@ssw0rd123')
-        .should('have.value', 'P@ssw0rd123')
+            .should('have.value', 'P@ssw0rd123')
         globalObjects.login().click()
     })
 
     it('Dashboard page', function () {
         globalObjects.pageTitle()
-        .and('be.have.text', 'Dashboard')
+            .and('be.have.text', 'Dashboard')
 
         cy.get('thead>tr').find('th').eq(0).contains('Delivery Date')
         cy.get('thead>tr').find('th').eq(1).contains('Shipment No.')
@@ -46,18 +46,18 @@ describe('Invoicing clerk navigation regression testing:', () => {
     it('Scheduling page', function () {
         globalObjects.menuButton().click()
         invoicingClerkObjects.schedPage()
-        .and('be.have.text', 'Scheduling').click()
+            .and('be.have.text', 'Scheduling').click()
 
         globalObjects.pageTitle()
-        .and('be.have.text', 'Scheduling')
+            .and('be.have.text', 'Scheduling')
         invoicingClerkObjects.bulkShipCodeDrop()
-        .should('be.visible')
+            .should('be.visible')
         invoicingClerkObjects.tppDrop()
-        .should('be.visible')
+            .should('be.visible')
         invoicingClerkObjects.driverDrop()
-        .should('be.visible')
+            .should('be.visible')
         invoicingClerkObjects.vehicleDrop()
-        .should('be.visible')
+            .should('be.visible')
 
         cy.get('thead>tr').eq(1).find('th').eq(0).contains('Action')
         cy.get('thead>tr').eq(1).find('th').eq(1).contains('Trip Number')
@@ -69,21 +69,21 @@ describe('Invoicing clerk navigation regression testing:', () => {
         cy.get('thead>tr').eq(1).find('th').eq(7).contains('Unscheduled Quantity')
 
         invoicingClerkObjects.compartGuide()
-        .and('be.have.text', 'Compartmentation Guide')
+            .and('be.have.text', 'Compartmentation Guide')
         invoicingClerkObjects.addOutBound()
-        .and('be.have.text', 'Add Outbound Number')
-        
+            .and('be.have.text', 'Add Outbound Number')
+
         invoicingClerkObjects.submitButton()
-        .should('be.visible').and('be.have.text', 'Submit')
+            .should('be.visible').and('be.have.text', 'Submit')
     })
 
     it('History page', function () {
         globalObjects.menuButton().click()
         invoicingClerkObjects.historyPage()
-        .and('be.have.text', 'History').click()
+            .and('be.have.text', 'History').click()
 
         globalObjects.pageTitle()
-        .and('be.have.text', 'History')
+            .and('be.have.text', 'History')
 
         cy.get('thead>tr').find('th').eq(0).contains('Date')
         cy.get('thead>tr').find('th').eq(1).contains('Shipment No.')

@@ -18,19 +18,23 @@ describe('IRT navigation regression testing:', () => {
 
   it('Login IRT', function () {
     cy.navigatePDS()
-    globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
-    globalObjects.username().type('pp.irt_1').should('have.value', 'pp.irt_1')
-    globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
+    globalObjects.businesstype().select('Phoenix Petroleum')
+      .should('have.value', 'PP')
+    globalObjects.username().type('pp.irt_1')
+      .should('have.value', 'pp.irt_1')
+    globalObjects.password().type('P@ssw0rd123')
+      .should('have.value', 'P@ssw0rd123')
     globalObjects.login().click()
   })
 
-  it('Notifications', function () {
+  it('Notification page', function () {
     notifObjects.notifBell().click()
-    notifObjects.notifTitle()
+    globalObjects.pageTitle()
+      .and('be.have.text', 'Notifications')
     notifObjects.refreshButton()
   })
 
-  it('Settings', function () {
+  it('Settings page', function () {
     globalObjects.profileDropdown().click()
     globalObjects.settingsButton().click()
 

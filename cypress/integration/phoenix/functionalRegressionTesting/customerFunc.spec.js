@@ -12,20 +12,24 @@ describe('Customer functional regression testing:', () => {
 
   it('Login customer user', function () {
     cy.navigatePDS()
-    globalObjects.businesstype().select('Phoenix Petroleum').should('have.value', 'PP')
-    globalObjects.username().type('0001002022').should('have.value', '0001002022')
-    globalObjects.password().type('P@ssw0rd123').should('have.value', 'P@ssw0rd123')
+    globalObjects.businesstype().select('Phoenix Petroleum')
+      .should('have.value', 'PP')
+    globalObjects.username().type('0001002022')
+      .should('have.value', '0001002022')
+    globalObjects.password().type('P@ssw0rd123')
+      .should('have.value', 'P@ssw0rd123')
     globalObjects.login().click()
 
   })
 
-  it('Notifications', function () {
+  it('Notification page', function () {
     notifObjects.notifBell().click()
-    notifObjects.notifTitle()
+    customerObjects.navTitle()
+      .and('be.have.text', 'Notification')
     notifObjects.refreshButton()
   })
 
-  it('Settings', function () {
+  it('Settings page', function () {
     globalObjects.profileDropdown().click()
     globalObjects.settingsButton().click()
 
@@ -47,10 +51,11 @@ describe('Customer functional regression testing:', () => {
     settingsObjects.AboutthisAppTab().click()
     settingsObjects.AboutthisAppContainer()
   })
-  
+
   it('Logout', function () {
     globalObjects.profileDropdown().click()
     customerObjects.customerPopUp()
+      .should('be.visible')
     globalObjects.logoutButton().click()
   })
 })
