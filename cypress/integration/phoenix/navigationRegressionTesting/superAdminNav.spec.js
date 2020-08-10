@@ -135,7 +135,7 @@ describe('Admin navigation regression testing:', () => {
         globalObjects.pageTitle()
             .and('be.have.text', 'Manage Reasons')
 
-        adminObjects.addReasonButton()
+        adminObjects.addReason()
             .should('be.visible')
             .and('contain', 'Add New Reason')
         adminObjects.reasonFilter()
