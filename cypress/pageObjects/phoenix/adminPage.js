@@ -140,6 +140,14 @@ class adminObjects {
     filterProblems() {
         return cy.get('[value="Problems Reported"]')
     }
+
+    editButton() {
+        return cy.get('.data_list-body > :nth-child(1) > :nth-child(2)')
+    }
+
+    deleteButton() {
+        return  cy.get('.data_list-body > :nth-child(1) > :nth-child(2)')
+    }
     ////////////////////////////////////////////////Image submitted page
     imageSubmitPage() {
         return cy.get('[href="/dashboard/image-submitted"] > .sidebar-menu-item')

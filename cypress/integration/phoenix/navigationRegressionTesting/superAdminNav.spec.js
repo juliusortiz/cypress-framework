@@ -138,14 +138,10 @@ describe('Admin navigation regression testing:', () => {
         adminObjects.addReason()
             .should('be.visible')
             .and('contain', 'Add New Reason')
-        adminObjects.reasonFilter()
+        adminObjects.reasonDropDown()
             .should('be.visible')
-        adminObjects.editButton()
-            .should('be.visible')
-            .and('contain', 'Edit')
-        adminObjects.deleteButton()
-            .should('be.visible')
-            .and('contain', 'Delete')
+        adminObjects.editButton().contains('Edit')
+        adminObjects.deleteButton().contains('Delete')
     })
 
     it('Image Submitted page', function () {
