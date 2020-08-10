@@ -101,8 +101,6 @@ describe('Super admin functional regression testing:', () => {
 
         cy.log('Delete scheduler user')
         adminObjects.deleteUserButton().click()
-        adminObjects.deleteCancel().click()
-        adminObjects.deleteUserButton().click()
         adminObjects.deleteConfirm().click()
         cy.log('Successfully deleted scheduler user')
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,8 +141,6 @@ describe('Super admin functional regression testing:', () => {
 
 
         cy.log('Delete IRT user')
-        adminObjects.deleteUserButton().click()
-        adminObjects.deleteCancel().click()
         adminObjects.deleteUserButton().click()
         adminObjects.deleteConfirm().click()
         cy.log('Successfully deleted IRT user')
@@ -187,8 +183,6 @@ describe('Super admin functional regression testing:', () => {
 
         cy.log('Delete dispatcher user')
         adminObjects.deleteUserButton().click()
-        adminObjects.deleteCancel().click()
-        adminObjects.deleteUserButton().click()
         adminObjects.deleteConfirm().click()
         cy.log('Successfully deleted dispatcher user')
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -230,8 +224,6 @@ describe('Super admin functional regression testing:', () => {
 
         cy.log('Delete admin user')
         adminObjects.deleteUserButton().click()
-        adminObjects.deleteCancel().click()
-        adminObjects.deleteUserButton().click()
         adminObjects.deleteConfirm().click()
         cy.log('Successfully deleted admin user')
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -272,8 +264,6 @@ describe('Super admin functional regression testing:', () => {
 
 
         cy.log('Delete invoicing clerk user')
-        adminObjects.deleteUserButton().click()
-        adminObjects.deleteCancel().click()
         adminObjects.deleteUserButton().click()
         adminObjects.deleteConfirm().click()
         cy.log('Successfully deleted invoicing clerk user')
