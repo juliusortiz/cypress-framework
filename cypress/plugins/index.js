@@ -13,7 +13,7 @@
 // the project's config changing)
 
 
-// const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions')
+const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions')
 
 /**
  * @type {Cypress.PluginConfig}
