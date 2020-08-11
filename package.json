@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "cypress": "^4.12.1",
+    "cypress-browser-permissions": "^1.0.5",
     "cypress-dark": "^1.7.14"
   },
   "scripts": {
@@ -19,8 +20,7 @@
     "cy:run:chrome:headless": "cypress run --browser chrome --headless",
     "cy:run:firefox": "cypress run --browser firefox",
     "cy:run:firefox:headless": "cypress run --browser firefox --headless",
-    "cy:run:key:phoenix": "cypress run --record --key d3dd5cec-a6d5-437d-80d7-542d66f68fb4",
-    "cy:spec": "cypress run --spec"
+    "cy:run:key:phoenix": "cypress run --record --key d3dd5cec-a6d5-437d-80d7-542d66f68fb4"
   },
   "keywords": [],
   "author": "",

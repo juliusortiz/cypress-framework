@@ -12,10 +12,13 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+
+// const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions')
+
 /**
  * @type {Cypress.PluginConfig}
  */
-module.exports = (on, config) => {
+module.exports = (on) => {
   on('before:browser:launch', (browser, launchOptions) => {
     if (browser.name === 'chrome' && browser.isHeadless) {
       launchOptions.args.push('--disable-gpu');
@@ -29,7 +32,17 @@ module.exports = (on, config) => {
       launchOptions.args.push('--disable-gpu');
       return launchOptions
     }
+    if (browser.name === 'edge' && browser.isHeadless) {
+      launchOptions.args.push('--disable-gpu');
+      return launchOptions
+    }
   });
 }
+// module.exports = (on, config) => {
+//   config = cypressBrowserPermissionsPlugin(on, config);
+//   return config;
+// }
+
+
 
 
